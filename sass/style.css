@@ -482,7 +482,7 @@ body .social_net {
 }
 body .social_net .x {
   display: block;
-  background-image: url("../../public/img/gorjeo.png");
+  background-image: url("./../public/img/gorjeo.png");
   background-size: cover;
   width: 32px;
   height: 32px;
@@ -490,7 +490,7 @@ body .social_net .x {
 }
 body .social_net .insta {
   display: block;
-  background-image: url("../../public/img/instagram.png");
+  background-image: url("./../public/img/instagram.png");
   background-size: cover;
   width: 32px;
   height: 32px;
@@ -498,7 +498,7 @@ body .social_net .insta {
 }
 body .social_net .git {
   display: block;
-  background-image: url("../../public/img/github.png");
+  background-image: url("./../public/img/github.png");
   background-size: cover;
   width: 32px;
   height: 32px;
@@ -506,7 +506,7 @@ body .social_net .git {
 }
 body .social_net .linkedin {
   display: block;
-  background-image: url("../../public/img/linkedin.png");
+  background-image: url("./../public/img/linkedin.png");
   background-size: cover;
   width: 32px;
   height: 32px;
