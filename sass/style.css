@@ -1,0 +1,516 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@keyframes scrolling {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/fonts/Poppins-Regular.eot");
+  src: url("../../public/fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../../public/fonts/Poppins-Regular.woff2") format("woff2"), url("../../public/fonts/Poppins-Regular.woff") format("woff"), url("../../public/fonts/Poppins-Regular.ttf") format("truetype"), url("../../public/fonts/Poppins-Regular.svg#Poppins-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("../../public/fonts/PressStart2P-Regular.eot");
+  src: url("../../public/fonts/PressStart2P-Regular.eot?#iefix") format("embedded-opentype"), url("../../public/fonts/PressStart2P-Regular.woff2") format("woff2"), url("../../public/fonts/PressStart2P-Regular.woff") format("woff"), url("../../public/fonts/PressStart2P-Regular.ttf") format("truetype"), url("../../public/fonts/PressStart2P-Regular.svg#PressStart2P-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("../../public/fonts/PermanentMarker-Regular.eot");
+  src: url("../../public/fonts/PermanentMarker-Regular.eot?#iefix") format("embedded-opentype"), url("../../public/fonts/PermanentMarker-Regular.woff2") format("woff2"), url("../../public/fonts/PermanentMarker-Regular.woff") format("woff"), url("../../public/fonts/PermanentMarker-Regular.ttf") format("truetype"), url("../../public/fonts/PermanentMarker-Regular.svg#PermanentMarker-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+section.proyects div {
+  margin-bottom: 1rem;
+}
+section.proyects div .repositorio {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("../../public/img/github.png");
+}
+section.proyects div > * {
+  margin: 1rem;
+}
+section.proyects .img_proyect {
+  border: 1px solid;
+  padding: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+section.proyects .img_proyect img {
+  margin-right: 1rem;
+}
+section.proyects figure.python {
+  border-image: linear-gradient(to right, #72C1E8, #F0C020);
+  border-image-slice: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+section.proyects figure.front {
+  border-image: linear-gradient(to right, #FFDF00, #E64C18, #006BC0);
+  border-image-slice: 1;
+}
+section.proyects figure.csharp {
+  border-image: linear-gradient(to right, #A179DC, #280068);
+  border-image-slice: 1;
+}
+section.proyects span {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  font-family: "Press Start 2P";
+  color: #535353;
+}
+section.proyects .no_is {
+  color: red;
+}
+section.proyects div div {
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+section.proyects .activo {
+  visibility: visible;
+  max-height: 500px;
+}
+
+.boingInUp {
+  animation-delay: 0.5s;
+}
+
+@media (width > 1180px) {
+  section.proyects {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+footer a {
+  display: block;
+}
+footer div {
+  padding: 1rem;
+}
+
+.contenedor_repro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contenedor_repro img {
+  width: 24rem;
+  height: 20rem;
+}
+.contenedor_repro iframe {
+  display: inline-block;
+  position: absolute;
+  top: 5%;
+  left: 10.25%;
+  width: 19.25rem;
+  height: 15rem;
+  background-color: #1A191D;
+  border-radius: 10px;
+  border: 2px solid gray;
+}
+
+@media (width >= 667px) {
+  .contenedor_repro {
+    width: 45rem;
+    height: 25rem;
+  }
+  .contenedor_repro img {
+    width: 39rem;
+    height: 22rem;
+  }
+  .contenedor_repro iframe {
+    top: 10%;
+    left: 15.25%;
+    width: 31.25rem;
+    height: 16.5rem;
+  }
+}
+@media (width >= 1180px) {
+  .contenedor_repro {
+    width: 60rem;
+    height: 36rem;
+  }
+  .contenedor_repro img {
+    width: 56rem;
+    height: 37rem;
+  }
+  .contenedor_repro iframe {
+    top: 4%;
+    left: 12.5%;
+    width: 45.25rem;
+    height: 27.5rem;
+  }
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #1A1A1A;
+  padding: 1rem;
+}
+nav div {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+nav img {
+  width: 75%;
+}
+nav div:last-child {
+  margin-right: 2%;
+}
+nav .nav_section {
+  text-align: center;
+  margin-right: 7%;
+}
+nav .nav_section a {
+  padding-left: 5px;
+  font-family: "Poppins", Helvetica, sans-serif;
+}
+nav .nav_section a::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 1.5rem;
+  background-color: white;
+  margin-left: 4px;
+}
+nav .nav_section a:hover {
+  color: #535353;
+}
+nav .nav_section a:last-child::after {
+  visibility: hidden;
+}
+
+@media (width > 375px) {
+  nav .nav_section a::after {
+    height: 1.5rem;
+  }
+}
+@media (width > 667px) {
+  nav .nav_section a::after {
+    height: 1.5rem;
+  }
+  nav img {
+    width: 50%;
+  }
+}
+@media (width > 550px) {
+  nav img {
+    width: 50%;
+  }
+}
+@media (width > 820px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+  }
+  nav img {
+    width: 20%;
+  }
+  nav .nav_section {
+    margin: 0;
+  }
+  nav .social_net {
+    padding-right: 5rem;
+    max-width: 200px;
+    padding: 0;
+  }
+}
+@media (width > 1130px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+  }
+  nav img {
+    width: 25%;
+    margin-right: 5%;
+  }
+  nav .nav_section {
+    position: relative;
+    left: -6%;
+  }
+  nav .social_net {
+    padding-right: 5rem;
+    width: 20rem;
+    padding: 0;
+    margin: 0;
+    gap: 2%;
+  }
+  nav .social_net a {
+    width: 64px;
+    height: 64px;
+  }
+}
+section.stacks {
+  padding: 15px;
+}
+section.stacks article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.stacks article div {
+  padding: 5%;
+}
+section.stacks article div p {
+  text-align: center;
+}
+section.stacks .librerias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+section.stacks .librerias .pandas {
+  background-color: white;
+  border-radius: 5rem;
+}
+
+@media (width > 820px) {
+  section.stacks article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  section.stacks article div {
+    padding: 3%;
+  }
+}
+@media (width > 1180px) {
+  section.stacks {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+section.about_me {
+  background-image: linear-gradient(to right, #223850, #121B24);
+}
+section.about_me article .photo {
+  position: relative;
+  display: inline-block;
+  background-image: url("../../public/img/i_movile.png");
+  background-size: contain;
+  width: 25rem;
+  height: 33rem;
+  background-repeat: no-repeat;
+  top: -5rem;
+  right: 2rem;
+}
+section.about_me article .nombre, section.about_me article .bienve {
+  font-size: 50px;
+  font-family: "Permanent Marker";
+  padding-bottom: 1rem;
+  margin-top: 3rem;
+}
+section.about_me article .vanishIn {
+  animation-duration: 2s;
+  margin-top: 0;
+}
+section.about_me article .a_contact {
+  display: inline-block;
+  font-size: 24px;
+  color: greenyellow;
+  border: 2px solid greenyellow;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+section.about_me article .twisterInDown {
+  animation-duration: 5ms;
+}
+section.about_me article .a_conquer {
+  color: greenyellow;
+}
+section.about_me .scroll {
+  margin-left: auto;
+  animation: scrolling 1s infinite alternate ease-in-out;
+}
+
+@media (width > 375px) {
+  section.about_me article .photo {
+    position: relative;
+    display: inline-block;
+    background-image: url("../../public/img/i_movile.png");
+    background-size: contain;
+    width: 25rem;
+    height: 33rem;
+    background-repeat: no-repeat;
+    top: -5rem;
+    right: 0rem;
+  }
+}
+@media (width > 1130px) {
+  section.about_me article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  section.about_me article .photo {
+    position: relative;
+    background-size: contain;
+    width: 90%;
+    height: 90%;
+    bottom: 1%;
+    left: 1%;
+    background-image: url("../../public/img/i_descktop.png");
+  }
+  section.about_me article div:last-child {
+    padding: 30px;
+  }
+}
+@media (width > 1180px) {
+  section.about_me article {
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5%;
+  }
+  section.about_me article .photo {
+    top: -6rem;
+    left: 1%;
+  }
+}
+section {
+  background-color: transparent;
+}
+section img {
+  width: 64px;
+  height: 64px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html * {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1A191D;
+}
+body a {
+  color: white;
+  text-decoration: none;
+}
+body h2 {
+  padding: 1rem;
+  text-align: center;
+  font-family: "Press Start 2P";
+  text-rendering: optimizeLegibility;
+}
+body h3.second_titles {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #535353;
+}
+body .twisterInDown {
+  animation-duration: 2s;
+}
+body section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  margin-bottom: 2%;
+}
+body .button {
+  display: inline-block;
+  font-size: 24px;
+  color: greenyellow;
+  border: 2px solid greenyellow;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  transition: transform 0.5s ease;
+}
+body .button:hover {
+  background-color: lightgray;
+  color: black;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+body .social_net {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .social_net .x {
+  display: block;
+  background-image: url("../../public/img/gorjeo.png");
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-left: 1rem;
+}
+body .social_net .insta {
+  display: block;
+  background-image: url("../../public/img/instagram.png");
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-left: 1rem;
+}
+body .social_net .git {
+  display: block;
+  background-image: url("../../public/img/github.png");
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-left: 1rem;
+}
+body .social_net .linkedin {
+  display: block;
+  background-image: url("../../public/img/linkedin.png");
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

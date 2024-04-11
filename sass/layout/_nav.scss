@@ -1,0 +1,119 @@
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-nav;
+    padding: 1rem;
+    div{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        
+    }
+    img{
+        width: 75%;
+    }
+    div:last-child{
+        margin-right: 2%;
+    }
+    .nav_section{
+        text-align: center;
+        margin-right: 7%;
+        a{
+            padding-left: 5px;
+            font-family: "Poppins",Helvetica, sans-serif;
+            &::after{
+            content: "";
+            position: absolute;
+            display: inline-block;
+            width: 1px;
+            height: 1.5rem;
+            background-color: white;
+            margin-left: 4px;  
+            }
+            &:hover{
+                color: $color-hover-nav;
+            }
+        }
+
+    }
+    .nav_section a:last-child::after{
+        visibility: hidden;
+    }
+}
+
+@media (width > 375px) {
+    nav .nav_section a::after {
+        height: 1.5rem;
+    }
+
+}
+@media (width > 667px) {
+    nav .nav_section a::after {
+        height: 1.5rem;
+    }
+    nav img{
+        width: 50%;
+    }
+
+}
+@media (width > 550px) {
+    nav img{
+        width: 50%;
+    }
+}
+@media (width > 820px) {
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5%;
+        img{
+            width: 20%;
+        }
+        .nav_section{
+            margin: 0;
+        }
+        .social_net{
+            padding-right: 5rem;
+            max-width: 200px;
+            padding: 0;
+        }
+    }
+
+}
+@media (width > 1130px) {
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        img{
+            width: 25%;
+            margin-right: 5%;
+        }
+        .nav_section{
+            position: relative;
+            left: -6%;
+        }
+
+        .social_net{
+            padding-right: 5rem;
+            width: 20rem;
+            padding: 0;
+            margin: 0;
+            gap: 2%;
+            a{
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+
+}
+
+
+
+

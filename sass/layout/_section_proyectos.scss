@@ -1,0 +1,73 @@
+section.proyects{
+    div{
+        margin-bottom: 1rem;
+        .repositorio{
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin-left: auto;
+            margin-right: auto;
+            background-image: url("../../public/img/github.png");
+        }
+    }
+    div > *{
+        margin: 1rem;
+    }
+
+    .img_proyect{
+        border: 1px solid ;
+        padding: 1rem;
+        overflow: hidden;
+        cursor:pointer;
+        img{
+            margin-right: 1rem;
+        }
+    }
+    figure.python{
+        border-image: linear-gradient(to right, #72C1E8, #F0C020);
+        border-image-slice: 1;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+    figure.front{
+        border-image: linear-gradient(to right, #FFDF00, #E64C18,#006BC0);
+        border-image-slice: 1;
+    }
+    figure.csharp{
+        border-image: linear-gradient(to right, #A179DC, #280068);
+        border-image-slice: 1;
+    }
+
+    span{
+        display: block;
+        padding: 1rem;
+        text-align: center;
+        font-family: $font-code;
+        color: $color-hover-nav;
+    }
+    .no_is{
+        color: red;
+    }
+    div div{
+        visibility: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease-out;
+    }
+
+    .activo{
+        visibility: visible;
+        max-height: 500px;   
+    }
+    
+}
+.boingInUp{
+    animation-delay: .5s;
+}
+@media (width > 1180px) {
+    section.proyects{
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

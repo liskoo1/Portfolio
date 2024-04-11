@@ -1,0 +1,96 @@
+
+section.about_me{
+    background-image: linear-gradient(to right,#223850,#121B24);
+    article{
+        .photo{
+            position: relative;
+            display: inline-block;
+            background-image: url("../../public/img/i_movile.png");
+            background-size: contain;
+            width: 25rem;
+            height: 33rem;
+            background-repeat: no-repeat;
+            top: -5rem;
+            right: 2rem;
+        }
+        .nombre,.bienve{
+            font-size: 50px;
+            font-family: "Permanent Marker";
+            padding-bottom: 1rem;
+            margin-top: 3rem;
+            
+        }
+        .vanishIn {
+            animation-duration: 2s;
+            margin-top: 0;
+        }
+        .a_contact{
+            display: inline-block;
+            font-size: 24px;
+            color: greenyellow;
+            border: 2px solid greenyellow;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .twisterInDown{
+            animation-duration: 5ms;
+        }
+        .a_conquer{
+            color: greenyellow;
+        }
+    }
+    .scroll{
+        margin-left: auto;
+        animation: scrolling 1s infinite alternate ease-in-out;
+    }
+
+}
+@media (width > 375px) {
+    
+    section.about_me article .photo{
+        position: relative;
+        display: inline-block;
+        background-image: url("../../public/img/i_movile.png");
+        background-size: contain;
+        width: 25rem;
+        height: 33rem;
+        background-repeat: no-repeat;
+        top: -5rem;
+        right: 0rem;
+    }
+}
+@media (width > 1130px) {
+    section.about_me article{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        
+        .photo{
+            position: relative;
+            background-size:contain;
+            width: 90%;
+            height: 90%;
+            bottom: 1%;
+            left: 1%;
+            background-image: url("../../public/img/i_descktop.png");
+        }
+        div:last-child{
+            padding: 30px;
+        }
+    }
+
+}
+@media (width > 1180px) {
+    section.about_me article{
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 5% ;
+        .photo{
+            top: -6rem;
+            left: 1%;
+        }
+    }
+
+}

@@ -1,0 +1,47 @@
+section.stacks{
+    padding: 15px;
+
+    article {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        div{
+            padding: 5%;
+            p {
+                text-align: center;
+            }
+        }
+    }
+    .librerias{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        align-items: center;
+        justify-items: center;
+        .pandas{
+            background-color: white;
+            border-radius: 5rem;
+        }
+    }
+
+}
+@media (width > 820px){
+    section.stacks{
+        article{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            div{
+                padding: 3%;
+            }
+            
+        }
+    }
+
+}
+@media (width > 1180px) {
+    section.stacks{
+        max-width: 1180px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

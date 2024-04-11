@@ -1,0 +1,16 @@
+@import "_section_proyectos";
+@import "footer";
+@import "_reproductor";
+@import "nav";
+@import "_section_stacks";
+@import '_section_about_me';
+
+section{
+    background-color:transparent;
+    
+    img{
+        width: 64px;
+        height: 64px;
+    }
+    
+}
