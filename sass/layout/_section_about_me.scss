@@ -5,7 +5,7 @@ section.about_me{
         .photo{
             position: relative;
             display: inline-block;
-            background-image: url("../../public/img/i_movile.png");
+            background-image: url("./../public/img/i_movile.png");
             background-size: contain;
             width: 25rem;
             height: 33rem;
@@ -52,7 +52,7 @@ section.about_me{
     section.about_me article .photo{
         position: relative;
         display: inline-block;
-        background-image: url("../../public/img/i_movile.png");
+        background-image: url("./../public/img/i_movile.png");
         background-size: contain;
         width: 25rem;
         height: 33rem;
@@ -73,7 +73,8 @@ section.about_me{
             height: 90%;
             bottom: 1%;
             left: 1%;
-            background-image: url("../../public/img/i_descktop.png");
+            
+            background-image: url("./../public/img/i_descktop.png");
         }
         div:last-child{
             padding: 30px;
@@ -88,7 +89,7 @@ section.about_me{
         margin-right: auto;
         padding-bottom: 5% ;
         .photo{
-            top: -6rem;
+            top: -3rem;
             left: 1%;
         }
     }
