@@ -63,16 +63,16 @@ body {
         justify-content: center;
         align-items: center;
         .x{
-            @include a_logos("../../public/img/gorjeo.png");
+            @include a_logos("./../public/img/gorjeo.png");
         }
         .insta{
-            @include a_logos("../../public/img/instagram.png");
+            @include a_logos("./../public/img/instagram.png");
         }
         .git{
-            @include a_logos("../../public/img/github.png");
+            @include a_logos("./../public/img/github.png");
         }
         .linkedin{
-            @include a_logos("../../public/img/linkedin.png");
+            @include a_logos("./../public/img/linkedin.png");
         }
     }
 
