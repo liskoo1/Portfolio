@@ -63,7 +63,6 @@ section.proyects .img_proyect img {
 section.proyects figure.python {
   border-image: linear-gradient(to right, #72C1E8, #F0C020);
   border-image-slice: 1;
-  overflow: hidden;
   border-radius: 20px;
 }
 section.proyects figure.front {
@@ -96,6 +95,7 @@ section.proyects .activo {
 
 .boingInUp {
   animation-delay: 0.5s;
+  animation-fill-mode: forwards;
 }
 
 @media (width > 1180px) {
@@ -340,6 +340,7 @@ section.about_me article .nombre, section.about_me article .bienve {
 }
 section.about_me article .vanishIn {
   animation-duration: 2s;
+  animation-fill-mode: forwards;
   margin-top: 0;
 }
 section.about_me article .a_contact {

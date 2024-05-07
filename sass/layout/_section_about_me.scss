@@ -22,6 +22,7 @@ section.about_me{
         }
         .vanishIn {
             animation-duration: 2s;
+            animation-fill-mode: forwards;
             margin-top: 0;
         }
         .a_contact{

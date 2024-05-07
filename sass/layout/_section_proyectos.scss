@@ -26,7 +26,6 @@ section.proyects{
     figure.python{
         border-image: linear-gradient(to right, #72C1E8, #F0C020);
         border-image-slice: 1;
-        overflow: hidden;
         border-radius: 20px;
     }
     figure.front{
@@ -62,6 +61,7 @@ section.proyects{
 }
 .boingInUp{
     animation-delay: .5s;
+    animation-fill-mode: forwards;
 }
 @media (width > 1180px) {
     section.proyects{
