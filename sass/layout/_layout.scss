@@ -1,9 +1,9 @@
-@import "_section_proyectos";
-@import "footer";
-@import "_reproductor";
-@import "nav";
-@import "_section_stacks";
-@import '_section_about_me';
+@use "_section_proyectos";
+@use "footer";
+@use "_reproductor";
+@use "nav";
+@use "_section_stacks";
+@use '_section_about_me';
 
 section{
     background-color:transparent;

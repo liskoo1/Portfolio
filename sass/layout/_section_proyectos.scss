@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 section.proyects{
     div{
         margin-bottom: 1rem;
@@ -41,8 +43,8 @@ section.proyects{
         display: block;
         padding: 1rem;
         text-align: center;
-        font-family: $font-code;
-        color: $color-hover-nav;
+        font-family: variables.$font-code;
+        color: variables.$color-hover-nav;
     }
     .no_is{
         color: red;

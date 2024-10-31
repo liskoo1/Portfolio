@@ -137,8 +137,15 @@ document.addEventListener("DOMContentLoaded", function() {
           iframe.setAttribute("src","https://www.youtube.com/embed/1zs5WpNc-Io");
           iframe.setAttribute("title","App asistencia del personal de una empresa");
         }
+        else if(boton.classList.contains("proyect6")){
+          iframe.setAttribute("src","https://www.youtube.com/embed/e6hQ58Afj-Y?si=DkYvG32nGG-nym2a");
+          iframe.setAttribute("title","App Cliente Vanguard Cross and Fit");
+        }
+        else if(boton.classList.contains("proyect7")){
+          iframe.setAttribute("src","https://www.youtube.com/embed/98xmQkoGBHI?si=yR-Cc256mbYf2FfM");
+          iframe.setAttribute("title","App Negocio Vanguard Cross and Fit");
+        }
       })
     }
-    
   });
   

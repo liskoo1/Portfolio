@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 .contenedor_repro{
     display: flex;
     align-items: center;
@@ -19,7 +21,7 @@
         left: 10.25%;
         width: 19.25rem;
         height: 15rem;
-        background-color: $color-fondo;
+        background-color: variables.$color-fondo;
         border-radius: 10px;
         border: 2px solid gray;
     }

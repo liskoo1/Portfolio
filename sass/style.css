@@ -202,7 +202,7 @@ nav .nav_section a::after {
   display: inline-block;
   width: 1px;
   height: 1.5rem;
-  background-color: white;
+  background-color: red;
   margin-left: 4px;
 }
 nav .nav_section a:hover {
@@ -294,8 +294,9 @@ section.stacks article div p {
 section.stacks .librerias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-items: center;
+}
+section.stacks .librerias .pico {
+  grid-column: 2;
 }
 section.stacks .librerias .pandas {
   background-color: white;

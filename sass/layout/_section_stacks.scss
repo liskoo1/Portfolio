@@ -5,6 +5,7 @@ section.stacks{
         display: flex;
         align-items: center;
         justify-content: center;
+        
         div{
             padding: 5%;
             p {
@@ -15,8 +16,10 @@ section.stacks{
     .librerias{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        align-items: center;
-        justify-items: center;
+        .pico{
+            grid-column: 2;
+        }
+    
         .pandas{
             background-color: white;
             border-radius: 5rem;
