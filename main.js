@@ -130,21 +130,30 @@ document.addEventListener("DOMContentLoaded", function() {
           iframe.setAttribute("title","Semana Santa Níjar 2024");
         }
         else if(boton.classList.contains("proyect4")){
+          iframe.setAttribute("src","https://www.ia-pol.es");
+          iframe.setAttribute("title","IA-POL");
+        }
+        else if(boton.classList.contains("proyect5")){
           iframe.setAttribute("src","https://www.youtube.com/embed/goJDPRd6j4A");
           iframe.setAttribute("title","Gestor de tickets");
         }
-        else if(boton.classList.contains("proyect5")){
+        else if(boton.classList.contains("proyect6")){
           iframe.setAttribute("src","https://www.youtube.com/embed/1zs5WpNc-Io");
           iframe.setAttribute("title","App asistencia del personal de una empresa");
         }
-        else if(boton.classList.contains("proyect6")){
+        else if(boton.classList.contains("proyect7")){
           iframe.setAttribute("src","https://www.youtube.com/embed/e6hQ58Afj-Y?si=DkYvG32nGG-nym2a");
           iframe.setAttribute("title","App Cliente Vanguard Cross and Fit");
         }
-        else if(boton.classList.contains("proyect7")){
+        else if(boton.classList.contains("proyect8")){
           iframe.setAttribute("src","https://www.youtube.com/embed/98xmQkoGBHI?si=yR-Cc256mbYf2FfM");
           iframe.setAttribute("title","App Negocio Vanguard Cross and Fit");
         }
+        else if(boton.classList.contains("proyect9")){
+          iframe.setAttribute("src","https://www.youtube.com/embed/goIhWS8NvSo?si=gfMvtZRywV4CaliY");
+          iframe.setAttribute("title","Web App Vanguard Cross and Fit");
+        }
+        
       })
     }
   });
