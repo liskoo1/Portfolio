@@ -1,272 +1,597 @@
 <!doctype html>
-<html lang="en-es">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./sass/style.css">
-    <link rel="stylesheet" href="./node_modules/magic.css/assets/scss/magic.scss">
-    <title>Luis Requena Dev</title>
+    <meta name="description" content="Portfolio de Luis Requena Mellado — Full Stack Developer. Desarrollo web, desktop y mobile con Python, C#, JavaScript, React, .NET y más." />
+    <meta name="author" content="Luis Requena Mellado" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./sass/style.css" />
+    <title>Luis Requena Mellado — Full Stack Developer</title>
   </head>
   <body>
-    <div class="content">
-      <header id="aboutme">
-        <nav>
-          <img src="./public/img/logo_luis.png" alt="">
-          <div class="nav_section">
-            <a href="#aboutme">Sobre mí</a>
-            <a href="#stacks">Stacks</a>
-            <a href="#proyects">Proyectos</a>
-            <a href="#contact">Contáctame</a>
-          </div>
-          <div class = "social_net">
-            <a class="x" href="https://twitter.com/Liskoo89"></a>
-            <a class="insta" href="https://www.instagram.com/luisrequenamell/"></a>
-            <a class="git" href="https://github.com/liskoo1" class="git"></a>
-            <a class="linkedin" href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" class="linke"></a>
-          </div>
-        </nav>
-      </header>
-      <main>
-        <h1 hidden>Web de Luis Requena Mellado</h1>
-        <section class="about_me">
-          <article>
-            <div class="photo"></div>       
-            <div>
-              <p class="nombre">LRM DEV</p>
-              <p class="bienve">Bienvenid@!!</p>
-              
-              <p>
-                Mi nombre es Luis Requena Mellado soy programador Junior, desde 2022 he dedicado todo mi tiempo libre en formarme en el desarrollo de software.
-                Me encanta programar y aprender cosas nuevas
-                entorno a este trabajo, no tengo un stack preferido ya que me gusta desarrollar tanto web, desktop o mobile que aún no lo he tocado pero vendrá...
-                Como veréis en los stacks he programado ya con varios lenguajes. Mi formación como FullStack la he realizado en la academia <a href="https://www.conquerx.com/" class="a_conquer">ConquerX</a> con un profesorado
-                 fantástico, por Udemy y Youtube todo lo que sé sobre C# y .NET . No tengo experiencia laboral pero si tengo experiencia en desarrollo con proyectos propios, donde si
-                 tengo experiencia es en la gestión de empresa ya que he llevado hasta entonces la pequeña empresa de mis padres y también gestioné durante 3 años un box de Crossfit.
-                 Actualmente me encuentro buscando trabajo como programador Junior, me gustaría encontrar un trabajo en el que pueda aportar lo maximo al equipo y crecer como profesional.
-                Si queréis alguien fresco en vuestro equipo y con muchas ganas de aprender y ayudar al equipo cuenta conmigo. 
-              </p>
-              <a href="#contact" class="a_contact button" >Contáctame</a>
-            </div> 
-            <img class="scroll" src="./public/img/flecha-hacia-abajo.png" >
-          </article>
-        </section>
-        <section id="stacks" class="stacks">
-          <h2>Lenguajes y otros stacks</h2>
-          <h3 class="second_titles">Lenguajes</h3>
-          <article class="librerias">
-            <div>
-              <img src="./public/img/piton.png" >
-              <p>Python</p>
-            </div>
-            <div>
-              <img src="./public/img/js.png" >
-              <p>JS</p>
-            </div>
-            <div>
-              <img src="./public/img/c.svg" >
-              <p>C#</p>
-            </div>
-            <div class="pico">
-              <img src="./public/img/typescript.png" >
-              <p>Typescript</p>
-            </div>
-          </article>
-          <h3 class="second_titles">Backend</h3>
-          <article class="librerias">
-            
-            <div>
-              <img src="./public/img/fastapi.png" >
-              <p>FastApi</p>
-            </div>
-            <div>
-              <img src="./public/img/net.png" >
-              <p>.NET</p>
-            </div>
-            <div>
-              <img src="./public/img/nodejs.png" >
-              <p>Node.js</p>
-            </div>
-          </article>
-          <h3 class="second_titles">Frontend</h3>
-          <article class="librerias">
-            
-            <div>
-              <img src="./public/img/html.png" >
-              <p>HTML5</p>
-            </div>
-            <div>
-              <img src="./public/img/css.png" >
-              <p>CSS</p>
-            </div>
-            <div>
-              <img src="./public/img/react.png" >
-              <p>React</p>
-            </div>
-            <div class="pico">
-              <img src="./public/img/sass.png" >
-              <p>SASS</p>
-            </div>
-          </article>
-          <h3 class="second_titles">Database</h3>
-          <article class="librerias">
-            
-            <div>
-              <img src="./public/img/mysql.png" >
-              <p>MySQL</p>
-            </div>
-            <div>
-              <img src="./public/img/sql-server.png" >
-              <p>SQL Server</p>
-            </div>
-            <div>
-              <img src="./public/img/mongo.png" >
-              <p>Mongo DB</p>
-            </div>
-          </article>
-          <h3 class="second_titles">Librerías, Frameworks y Otros</h3>
-          <article class="librerias">
-            <div>
-              <img src="./public/img/Vite.js.svg" >
-              <p>Vite</p>
-            </div>
-            <div>
-              <img class="pandas" src="./public/img/netMaui.png" >
-              <p>.NET MAUI</p>
-            </div>
-            <div>
-              <img class="pandas" src="./public/img/pandas.svg" >
-              <p>Pandas</p>
-            </div>
-            <div>
-              <img src="./public/img/numpy.svg" >
-              <p>Numpy</p>
-            </div>
-            <div>
-              <img src="./public/img/linux.png">
-              <p>Linux</p>
-            </div>
-            <div>
-              <img src="./public/img/git.svg" >
-              <p>Git</p>
-            </div>
-          </article>
-        </section>
-        <section id="proyects" class="proyects">
-          <h2 >PROYECTOS</h2>
-          <div class="proyectos_py">
-            <figure class="img_proyect python">
-              <img src="./public/img/piton.png" >
-            </figure>
-            <div>
-              <p><span class="proyect">Proyect 1</span><strong>App de escritorio con IA "OCR" :</strong>  Esta app se encargar de reconocer los campos de los artículos en una factura y actualizar el stock de esos artículos
-                en tu base de datos, ideal para una tienda y agilizar la recepción de pedidos<span class="tech-use">Tecnologías:</span> Python, Tkinter, OpenCV y Tesseract
-              </p>
-              <p>Link al repositorio en Github<a class="repositorio" href="https://github.com/liskoo1/proyecto-facturas">-></a></p>
-              <a href="#reproductor"  class="button proyect1">REPRODUCIR</a>
-            </div>
-            <div>
-              <p>
-                 <span class="proyect">Proyect 2</span><strong>Web Revepetrol :</strong>  En esta web veremos a parte de todo lo relacionado con la empresa tenemos también un login de usuarios en el que al registrarnos en la web
-                nos creara en nuestro perfil una tarjeta virtual representada con un qr en el que al repostar en la estación de servicio tendremos un descuento según el rango que tengamos
-                que sera representado en la que por estrellas.<span class="tech-use">Tecnologías:</span> Python, FastApi, HTML, CSS y JS
-              </p>
-              <p class="no_is">Este repositorio no esta disponible ya que en el despliegue de la web se manejaran datos privados</p>
-              <a href="#reproductor"  class="button proyect2">REPRODUCIR</a>
-            </div>
-          </div>
-          <div class="proyectos_front">
-            <figure class="img_proyect front">
-              <img src="./public/img/js.png" >
-              <img src="./public/img/typescript.png" >
-              <img src="./public/img/html.png" >
-              <img src="./public/img/css.png" >
-            </figure>
-            
-            <div>
-              <p>
-                <span class="proyect">Proyect 3 </span> <strong>Semana Santa Níjar :</strong> Esta web la cree antes de semana santa cuando me llego el típico librito del Ayuntamiento de Níjar y se la hice al Ayuntamiento para que la gente
-                tuviera la opción de tenerlo también en formato web<span class="tech-use">Tecnologías:</span> JS, HTML y CSS
-              </p>
-              <p>Link al repositorio en Github<a class="repositorio" href="https://github.com/liskoo1/semanaSantaNijar">-></a></p>
-              <a href="#reproductor"  class="button proyect3">REPRODUCIR</a>
-            </div>
-            <div >
-              <p>
-                <span class="proyect">Proyect 4 </span><strong>IA-POL :</strong> Una plataforma web para opositores de policía local. En ella podrán realizar test, ver estadísticas de sus test y mucho mas.
-                <span class="tech-use">Tecnologías:</span> TS, React y .NET
-              </p>
-              <a href="https://www.ia-pol.es"  class="button proyect4" target="_blank">Ir a la web</a>
-            </div>
-          </div>
-          <div class="proyectos_csharp">
-            <figure class="img_proyect csharp">
-              <img src="./public/img/c.svg" >
-            </figure>
-            <div >
-              <p>
-                <span class="proyect">Proyect 5 </span><strong>Gestor de tickets :</strong>  Este software lo he creado para una empresa de un amigo que aun las tickest que dejaban pendientes los 
-                clientes los firmaban en el ticket y los guardaban fisicamenten. <span class="tech-use">Tecnologías:</span> C# y WPF 
-              </p>
-              <p>Link al repositorio en Github<a class="repositorio" href="https://github.com/liskoo1/calculadora_iphone_sol">-></a></p>
-              <a href="#reproductor"  class="button proyect5">REPRODUCIR</a>
-            </div>
-            <div >
-              <p>
-                <span class="proyect">Proyect 6 </span><strong>App_personal :</strong>  Esta aplicación a parte de otras cosas lo principal es para la gestión del personal de una empresa y el sellado de entada/salida
-                del personal de la empresa.<span class="tech-use">Tecnologías:</span> C# y WPF
-              </p>
-              <p>Link al repositorio en Github<a class="repositorio" href="https://github.com/liskoo1/App_de_personal_sol">-></a></p>
-              <a href="#reproductor"  class="button proyect6">REPRODUCIR</a>
-            </div>
-            <div >
-              <p>
-                <span class="proyect">Proyect 7 </span><strong>App cliente Vanguard Cross and Fit :</strong>  Esta aplicación es la parte cliente para moviles que gestiona la inscripciones en las clases
-                en un box de Crossfit aparate de otras muchas mas funcionalidades que tiene.<span class="tech-use">Tecnologías:</span> C# y .NET MAUI
-              </p>
-              <a href="#reproductor"  class="button proyect7">REPRODUCIR</a>
-            </div>
-            <div >
-              <p>
-                <span class="proyect">Proyect 8 </span><strong>App Negocio Vanguard Cross and Fit :</strong>  Esta aplicación es la parte negocio en la que vamos a poder configurar y gestionar todo nuestro negocio.
-                <span class="tech-use">Tecnologías:</span> C# y .NET MAUI
-              </p>
-              <a href="#reproductor"  class="button proyect8">REPRODUCIR</a>
-            </div>
-            <div >
-              <p>
-                <span class="proyect">Proyect 9 </span><strong>Web App Vanguard Cross and Fit :</strong>  Esta aplicación es la web y parte negocio en la que vamos a poder configurar y gestionar todo nuestro negocio.
-                <span class="tech-use">Tecnologías:</span> C# , .NET y Blazor
-              </p>
-              <a href="#reproductor"  class="button proyect9">REPRODUCIR</a>
-            </div>
-          </div>
-          
-        </section>  
-        <div id="reproductor" class="contenedor_repro">
-          <iframe src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-          <img src="./public/img/pc.png" alt="">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#hero" class="nav__logo" aria-label="Inicio">
+          <img src="./public/img/logo_luis.png" alt="LRM DEV Logo" />
+        </a>
+
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#about" class="nav__link">Sobre mí</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Proyectos</a></li>
+          <li><a href="#contact" class="nav__link">Contacto</a></li>
+        </ul>
+
+        <div class="nav__social">
+          <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="nav__social-link" aria-label="GitHub">
+            <img src="./public/img/github.png" alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="nav__social-link" aria-label="LinkedIn">
+            <img src="./public/img/linkedin.png" alt="" />
+          </a>
         </div>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h1 class="hero__name reveal">
+          LUIS REQUENA<br/>MELLADO
+        </h1>
+        <p class="hero__subtitle reveal reveal-delay-1">« Full Stack Developer »</p>
+        <p class="hero__tagline reveal reveal-delay-2">Creando experiencias digitales con pasión y código</p>
+        <div class="hero__ctas reveal reveal-delay-3">
+          <a href="#projects" class="btn btn-outline">VER PROYECTOS</a>
+          <a href="#contact" class="btn btn-filled">CONTÁCTAME</a>
         </div>
-    </div>
-    </main>
-    <footer>
-      <section class="contact" id="contact">
-        <h2 >Contáctame</h2>
-        <p>luisrequenadev@outlook.com</p>
-        <div class="curriculum">
-          <p>Currículum</p>
-          <a href="img/curriculum.pdf" class="button curriculum" download="img/curriculum.pdf">Descargar</a>
+      </div>
+      <div class="hero__scroll">
+        <span class="hero__scroll-text">Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <main>
+
+      <!-- ========== ABOUT ========== -->
+      <section class="about" id="about">
+        <div class="container">
+          <h2 class="section-title reveal">Sobre Mí</h2>
+          <div class="about__grid">
+            <div class="about__photo-wrapper reveal reveal-delay-1">
+              <img class="about__photo" src="./public/img/i_descktop.png" alt="Luis Requena Mellado" />
+              <div class="about__photo-glow"></div>
+            </div>
+            <div class="about__content reveal reveal-delay-2">
+              <h3 class="about__name">Luis Requena Mellado</h3>
+              <p class="about__role">Full Stack Developer</p>
+              <p class="about__bio">
+                Mi nombre es Luis Requena Mellado, soy programador Junior. Desde 2022 he dedicado todo mi tiempo libre en formarme en el desarrollo de software. Me encanta programar y aprender cosas nuevas entorno a este trabajo. No tengo un stack preferido ya que me gusta desarrollar tanto web, desktop o mobile.
+              </p>
+              <p class="about__bio">
+                Mi formación como FullStack la he realizado en la academia <a href="https://www.conquerx.com/">ConquerX</a> con un profesorado fantástico, por Udemy y Youtube todo lo que sé sobre C# y .NET. He llevado la pequeña empresa de mis padres y gestioné durante 3 años un box de Crossfit.
+              </p>
+              <p class="about__bio">
+                Actualmente me encuentro buscando trabajo como programador Junior. Si queréis alguien fresco en vuestro equipo y con muchas ganas de aprender y ayudar, cuenta conmigo.
+              </p>
+              <a href="./public/img/curriculum.pdf" class="btn btn-outline btn-arrow" download>DESCARGAR CV</a>
+            </div>
+          </div>
         </div>
-        <div class = "social_net">
-          <a class="x" href="https://twitter.com/Liskoo89"></a>
-          <a class="insta" href="https://www.instagram.com/luisrequenamell/"></a>
-          <a class="git" href="https://github.com/liskoo1" class="git"></a>
-          <a class="linkedin" href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" class="linke"></a>
-        </div>
-        
       </section>
-    </footer>      
+
+      <!-- ========== SKILLS ========== -->
+      <section class="skills" id="skills">
+        <div class="container">
+          <h2 class="section-title reveal">Skills & Tecnologías</h2>
+          <div class="skills__grid">
+
+            <!-- Lenguajes -->
+            <div class="skill-card reveal reveal-delay-1">
+              <h3 class="skill-card__title">Lenguajes</h3>
+              <div class="skill-card__items">
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/piton.png" alt="Python" /></div>
+                  <span class="skill-item__label">Python</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/js.png" alt="JavaScript" /></div>
+                  <span class="skill-item__label">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/c.svg" alt="C#" /></div>
+                  <span class="skill-item__label">C#</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/typescript.png" alt="TypeScript" /></div>
+                  <span class="skill-item__label">TypeScript</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="skill-card reveal reveal-delay-2">
+              <h3 class="skill-card__title">Backend</h3>
+              <div class="skill-card__items">
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/fastapi.png" alt="FastAPI" /></div>
+                  <span class="skill-item__label">FastAPI</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/net.png" alt=".NET" /></div>
+                  <span class="skill-item__label">.NET</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/nodejs.png" alt="Node.js" /></div>
+                  <span class="skill-item__label">Node.js</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frontend -->
+            <div class="skill-card reveal reveal-delay-3">
+              <h3 class="skill-card__title">Frontend</h3>
+              <div class="skill-card__items">
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/html.png" alt="HTML5" /></div>
+                  <span class="skill-item__label">HTML5</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/css.png" alt="CSS" /></div>
+                  <span class="skill-item__label">CSS</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/react.png" alt="React" /></div>
+                  <span class="skill-item__label">React</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/sass.png" alt="SASS" /></div>
+                  <span class="skill-item__label">SASS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-card reveal reveal-delay-4">
+              <h3 class="skill-card__title">Databases</h3>
+              <div class="skill-card__items">
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/mysql.png" alt="MySQL" /></div>
+                  <span class="skill-item__label">MySQL</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/sql-server.png" alt="SQL Server" /></div>
+                  <span class="skill-item__label">SQL Server</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/mongo.png" alt="MongoDB" /></div>
+                  <span class="skill-item__label">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Frameworks & Tools -->
+            <div class="skill-card reveal reveal-delay-5">
+              <h3 class="skill-card__title">Frameworks & Herramientas</h3>
+              <div class="skill-card__items">
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/Vite.js.svg" alt="Vite" /></div>
+                  <span class="skill-item__label">Vite</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/netMaui.png" alt=".NET MAUI" /></div>
+                  <span class="skill-item__label">.NET MAUI</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/pandas.svg" alt="Pandas" /></div>
+                  <span class="skill-item__label">Pandas</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/numpy.svg" alt="NumPy" /></div>
+                  <span class="skill-item__label">NumPy</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/linux.png" alt="Linux" /></div>
+                  <span class="skill-item__label">Linux</span>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-item__icon"><img src="./public/img/git.svg" alt="Git" /></div>
+                  <span class="skill-item__label">Git</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== PROJECTS ========== -->
+      <section class="projects" id="projects">
+        <div class="container">
+          <h2 class="section-title reveal">Proyectos</h2>
+          <div class="projects__grid">
+
+            <!-- Project 01 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">01</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/piton.png" alt="Python" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">App OCR con IA</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                App de escritorio con IA "OCR" que se encarga de reconocer los campos de los artículos en una factura y actualizar el stock en tu base de datos. Ideal para tiendas y agilizar la recepción de pedidos.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Tkinter</span>
+                <span class="project-tag">OpenCV</span>
+                <span class="project-tag">Tesseract</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/Czslt99HBAM">Ver Vídeo</a>
+                <a href="https://github.com/liskoo1/proyecto-facturas" target="_blank" rel="noopener" class="project-link">Repositorio</a>
+              </div>
+            </div>
+
+            <!-- Project 02 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">02</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/piton.png" alt="Python" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Web Revepetrol</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Web con login de usuarios, tarjeta virtual representada con QR para descuentos en estaciones de servicio. Sistema de rangos por estrellas según el uso.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">JS</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/Umkxs6lyWyI">Ver Vídeo</a>
+              </div>
+            </div>
+
+            <!-- Project 03 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">03</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/js.png" alt="JavaScript" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Semana Santa Níjar</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Web informativa creada para el Ayuntamiento de Níjar como alternativa digital al librito tradicional de Semana Santa, para que la gente lo tuviera también en formato web.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/wawBuEAVxsA">Ver Vídeo</a>
+                <a href="https://github.com/liskoo1/semanaSantaNijar" target="_blank" rel="noopener" class="project-link">Repositorio</a>
+              </div>
+            </div>
+
+            <!-- Project 04 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">04</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/react.png" alt="React" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">IA-POL</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Plataforma web para opositores de policía local. Realización de test, estadísticas detalladas y seguimiento del progreso en la preparación.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">TypeScript</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">.NET</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://www.ia-pol.es" target="_blank" rel="noopener" class="project-link">Ir a la Web</a>
+              </div>
+            </div>
+
+            <!-- Project 05 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">05</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Gestor de Tickets</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Software de escritorio para gestión de tickets pendientes de clientes. Creado para una empresa que anteriormente gestionaba todo en papel físico.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">WPF</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/goJDPRd6j4A">Ver Vídeo</a>
+                <a href="https://github.com/liskoo1/calculadora_iphone_sol" target="_blank" rel="noopener" class="project-link">Repositorio</a>
+              </div>
+            </div>
+
+            <!-- Project 06 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">06</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">App Personal de Empresa</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación para la gestión del personal de una empresa: control de empleados, sellado de entrada y salida, y más funcionalidades administrativas.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">WPF</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/1zs5WpNc-Io">Ver Vídeo</a>
+                <a href="https://github.com/liskoo1/App_de_personal_sol" target="_blank" rel="noopener" class="project-link">Repositorio</a>
+              </div>
+            </div>
+
+            <!-- Project 07 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">07</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Vanguard CrossFit — App Cliente</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación móvil para clientes del box de CrossFit. Gestión de inscripciones en clases y muchas más funcionalidades para los socios.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET MAUI</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/e6hQ58Afj-Y?si=DkYvG32nGG-nym2a">Ver Vídeo</a>
+              </div>
+            </div>
+
+            <!-- Project 08 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">08</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Vanguard CrossFit — App Negocio</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación de gestión para el negocio del box de CrossFit. Configuración completa, gestión de clases, socios y administración integral.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET MAUI</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/98xmQkoGBHI?si=yR-Cc256mbYf2FfM">Ver Vídeo</a>
+              </div>
+            </div>
+
+            <!-- Project 09 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">09</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Vanguard CrossFit — Web App</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación web y parte de gestión de negocio. Permite configurar y gestionar completamente el box de CrossFit desde el navegador.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET</span>
+                <span class="project-tag">Blazor</span>
+              </div>
+              <div class="project-card__links">
+                <a href="#" class="project-link" data-video="https://www.youtube.com/embed/goIhWS8NvSo?si=gfMvtZRywV4CaliY">Ver Vídeo</a>
+              </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">10</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/js.png" alt="JavaScript" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">Creador de Contenido con IA</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Plataforma avanzada para la generación automatizada de contenido de marketing (imágenes, vídeos, reels) utilizando agentes de IA y el motor de vídeo Remotion.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">React</span>
+                <span class="project-tag">Remotion</span>
+                <span class="project-tag">Google Gemini</span>
+                <span class="project-tag">OpenAI</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://github.com/liskoo1/Creador-de-contenido-con-IA" target="_blank" rel="noopener" class="project-link">Repositorio</a>
+                <a href="https://www.helpmeagro.com" target="_blank" rel="noopener" class="project-link">HelpMeAgro</a>
+              </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">11</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">HelpMeAgro — API FullAgro</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Backend robusto desarrollado en .NET que centraliza toda la lógica de negocio y proporciona la API REST para el ecosistema de la plataforma agrícola HelpMeAgro.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET</span>
+                <span class="project-tag">API REST</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://www.helpmeagro.com" target="_blank" rel="noopener" class="project-link">Ir a la Web</a>
+              </div>
+            </div>
+
+            <!-- Project 12 -->
+            <div class="project-card reveal reveal-delay-2">
+              <span class="project-card__number">12</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">HelpMeAgro — Web FullAgro</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación web SPA para la gestión integral del sector agrícola. Permite a los usuarios administrar sus datos y visualizar informes completos.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET</span>
+                <span class="project-tag">Blazor</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://www.helpmeagro.com" target="_blank" rel="noopener" class="project-link">Ir a la Web</a>
+              </div>
+            </div>
+
+            <!-- Project 13 -->
+            <div class="project-card reveal reveal-delay-1">
+              <span class="project-card__number">13</span>
+              <div class="project-card__header">
+                <div class="project-card__icon">
+                  <img src="./public/img/c.svg" alt="C#" />
+                </div>
+                <div>
+                  <h3 class="project-card__title">HelpMeAgro — App Móvil</h3>
+                </div>
+              </div>
+              <p class="project-card__description">
+                Aplicación móvil multiplataforma que ofrece a los agricultores acceso a los servicios de HelpMeAgro directamente desde sus dispositivos.
+              </p>
+              <div class="project-card__tags">
+                <span class="project-tag">C#</span>
+                <span class="project-tag">.NET MAUI</span>
+              </div>
+              <div class="project-card__links">
+                <a href="https://www.helpmeagro.com" target="_blank" rel="noopener" class="project-link">Ir a la Web</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ========== VIDEO MODAL ========== -->
+    <div class="video-modal" id="videoModal">
+      <div class="video-modal__content">
+        <button class="video-modal__close" id="videoModalClose" aria-label="Cerrar vídeo">✕</button>
+        <iframe class="video-modal__iframe" id="videoIframe" src="" title="Video del proyecto" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal">Contáctame</h2>
+        <p class="contact__message reveal reveal-delay-1">
+          Si quieres alguien fresco en tu equipo con muchas ganas de aprender y ayudar, cuenta conmigo.
+        </p>
+        <a href="mailto:luisrequenadev@outlook.com" class="contact__email reveal reveal-delay-2">luisrequenadev@outlook.com</a>
+        <div class="contact__social reveal reveal-delay-3">
+          <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="contact__social-link" aria-label="GitHub">
+            <img src="./public/img/github.png" alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="contact__social-link" aria-label="LinkedIn">
+            <img src="./public/img/linkedin.png" alt="" />
+          </a>
+        </div>
+        <div class="contact__ctas reveal reveal-delay-4">
+          <a href="./public/img/curriculum.pdf" class="btn btn-outline btn-arrow" download>DESCARGAR CV</a>
+          <a href="mailto:luisrequenadev@outlook.com" class="btn btn-filled">ENVIAR EMAIL</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="footer__logo" aria-label="Volver al inicio">
+          <img src="./public/img/logo_luis.png" alt="LRM DEV" />
+        </a>
+        <div class="footer__social">
+          <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub">
+            <img src="./public/img/github.png" alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn">
+            <img src="./public/img/linkedin.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="main.js"></script>
   </body>
 </html>

@@ -1,160 +1,199 @@
-document.addEventListener("DOMContentLoaded", function() {
+/* ========================================
+   LUIS REQUENA PORTFOLIO — CINEMATIC JS
+   Scroll reveal, nav effects, video modal,
+   mobile menu, parallax
+   ======================================== */
 
-    //ANIMACIÓN NOMBRE
-    let observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          
-          entry.target.classList.add('vanishIn');
-          observer.unobserve(entry.target); // Opcional: dejar de observar una vez animado
-        }
-      });
-    });
+document.addEventListener("DOMContentLoaded", () => {
+
+  // ─── SCROLL REVEAL ────────────────────────────
+  const revealElements = document.querySelectorAll('.reveal, .reveal-scale');
   
-    const animatedParagraph = document.querySelector(".nombre");
-    const animatedParagraph2 = document.querySelector(".bienve");
-    observer.observe(animatedParagraph);
-    observer.observe(animatedParagraph2);
-    // ANIMACIÓN SECCIONES
-    let observer2 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          
-          entry.target.classList.add('magictime','boingInUp');
-          observer2.unobserve(entry.target); // Opcional: dejar de observar una vez animado
-        }
-      });
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
     });
-  
-    const animatedParagraph3 = document.querySelector(".stacks");
-    const animatedParagraph4 = document.querySelector(".proyects");
-    observer2.observe(animatedParagraph3);
-    observer2.observe(animatedParagraph4);
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
 
-    // APERTURA Y CIERRE DE DIV PROYECTOS
-    let imagen_python = document.querySelector(".python");
-    let divs_py = document. querySelectorAll("div.proyectos_py div");
-    let imagen_front = document.querySelector(".front");
-    let divs_front = document.querySelectorAll(".proyectos_front div");
-    let imagen_csharp  = document.querySelector(".csharp");
-    let divs_csharp= document.querySelectorAll(".proyectos_csharp div");
-    let todos_proyects = document.querySelectorAll("section.proyects > div > div");
-    console.log(divs_py);
+  revealElements.forEach(el => revealObserver.observe(el));
 
 
-    imagen_python.addEventListener("click",()=>{
-      if(!imagen_python.classList.contains("activo")){
-        for(let pro of todos_proyects){
-        pro.classList.remove("activo");
-        pro.previousElementSibling.classList.remove("activo");
-        pro.classList.remove('magictime', 'slideRightReturn');
-        }
-        for(let pro of divs_py){
-          pro.classList.add("activo");
-          imagen_python.classList.add("activo");
-          pro.classList.add('magictime', 'slideRightReturn');
-        }
-      }
-      else{
-        for(let pro of divs_py){
-          pro.classList.remove("activo");
-          imagen_python.classList.remove("activo");
-          pro.classList.remove('magictime', 'slideRightReturn');
-        }
-      }
-  
-    });
+  // ─── NAVBAR SCROLL EFFECT ─────────────────────
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
 
-    imagen_front.addEventListener("click",() =>{
-      
-      if(!imagen_front.classList.contains("activo")){
-        for(let pro of todos_proyects){
-        pro.classList.remove("activo")
-        pro.previousElementSibling.classList.remove("activo");
-        pro.classList.remove('magictime', 'slideRightReturn')
-        }
-        for(let pro of divs_front){
-          pro.classList.add("activo")
-          imagen_front.classList.add("activo");
-          pro.classList.add('magictime', 'slideRightReturn');
-        }
-      }
-      else{
-        for(let pro of divs_front){
-          pro.classList.remove("activo");
-          imagen_front.classList.remove("activo");
-          pro.classList.remove('magictime', 'slideRightReturn')
-        }
-        
-      }
-
-    });
+  const handleNavScroll = () => {
+    const currentScroll = window.scrollY;
     
-    imagen_csharp.addEventListener("click",() =>{
-      if(!imagen_csharp.classList.contains("activo")){
-        for(let pro of todos_proyects){
-        pro.classList.remove("activo");
-        pro.previousElementSibling.classList.remove("activo");
-        pro.classList.remove('magictime', 'slideRightReturn')
-        }
-        for(let pro of divs_csharp){
-          pro.classList.add("activo");
-          imagen_csharp.classList.add("activo");
-          pro.classList.add('magictime', 'slideRightReturn');
-        }
-      }
-      else{
-        for(let pro of divs_csharp){
-          pro.classList.remove("activo");
-          imagen_csharp.classList.remove("activo");
-          pro.classList.remove('magictime', 'slideRightReturn')
-        }
-      }
+    if (currentScroll > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+
+    lastScroll = currentScroll;
+  };
+
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll(); // Initial check
+
+
+  // ─── MOBILE MENU ──────────────────────────────
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+      document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    let botones_proyectos = document.querySelectorAll("section.proyects a.button");
-    let iframe = document.getElementsByTagName("iframe")[0];
-    for (let boton of botones_proyectos){
+    // Close menu on link click
+    navLinks.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && 
+          !navLinks.contains(e.target) && 
+          !navToggle.contains(e.target)) {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+
+  // ─── SMOOTH SCROLL FOR NAV LINKS ──────────────
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (targetId === '#') return;
       
-      boton.addEventListener("click",()=>{
-        if(boton.classList.contains("proyect1")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/Czslt99HBAM");
-          iframe.setAttribute("title","Actualizador de stock con IA");
-        }
-        else if(boton.classList.contains("proyect2")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/Umkxs6lyWyI");
-          iframe.setAttribute("title","Web Revepetrol");
-        }
-        else if(boton.classList.contains("proyect3")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/wawBuEAVxsA");
-          iframe.setAttribute("title","Semana Santa Níjar 2024");
-        }
-        else if(boton.classList.contains("proyect4")){
-          iframe.setAttribute("src","https://www.ia-pol.es");
-          iframe.setAttribute("title","IA-POL");
-        }
-        else if(boton.classList.contains("proyect5")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/goJDPRd6j4A");
-          iframe.setAttribute("title","Gestor de tickets");
-        }
-        else if(boton.classList.contains("proyect6")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/1zs5WpNc-Io");
-          iframe.setAttribute("title","App asistencia del personal de una empresa");
-        }
-        else if(boton.classList.contains("proyect7")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/e6hQ58Afj-Y?si=DkYvG32nGG-nym2a");
-          iframe.setAttribute("title","App Cliente Vanguard Cross and Fit");
-        }
-        else if(boton.classList.contains("proyect8")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/98xmQkoGBHI?si=yR-Cc256mbYf2FfM");
-          iframe.setAttribute("title","App Negocio Vanguard Cross and Fit");
-        }
-        else if(boton.classList.contains("proyect9")){
-          iframe.setAttribute("src","https://www.youtube.com/embed/goIhWS8NvSo?si=gfMvtZRywV4CaliY");
-          iframe.setAttribute("title","Web App Vanguard Cross and Fit");
-        }
+      const targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const targetPos = targetEl.getBoundingClientRect().top + window.scrollY - navHeight;
         
-      })
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+
+  // ─── VIDEO MODAL ──────────────────────────────
+  const videoModal = document.getElementById('videoModal');
+  const videoIframe = document.getElementById('videoIframe');
+  const videoModalClose = document.getElementById('videoModalClose');
+
+  // Open modal on project video link click
+  document.querySelectorAll('[data-video]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const videoUrl = link.getAttribute('data-video');
+      if (videoUrl && videoModal && videoIframe) {
+        videoIframe.src = videoUrl;
+        videoModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close modal
+  const closeVideoModal = () => {
+    if (videoModal && videoIframe) {
+      videoModal.classList.remove('active');
+      document.body.style.overflow = '';
+      // Delay iframe src clearing for smooth transition
+      setTimeout(() => {
+        videoIframe.src = '';
+      }, 400);
+    }
+  };
+
+  if (videoModalClose) {
+    videoModalClose.addEventListener('click', closeVideoModal);
+  }
+
+  if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        closeVideoModal();
+      }
+    });
+  }
+
+  // Close modal on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
+      closeVideoModal();
     }
   });
+
+
+  // ─── HERO PARALLAX ────────────────────────────
+  const heroContent = document.querySelector('.hero__content');
   
+  if (heroContent) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
+      
+      if (scrolled < heroHeight) {
+        const translateY = scrolled * 0.3;
+        const opacity = 1 - (scrolled / heroHeight) * 1.2;
+        heroContent.style.transform = `translateY(${translateY}px)`;
+        heroContent.style.opacity = Math.max(0, opacity);
+      }
+    }, { passive: true });
+  }
+
+
+  // ─── ACTIVE NAV LINK HIGHLIGHT ────────────────
+  const sections = document.querySelectorAll('section[id]');
+  
+  const activeLinkObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        document.querySelectorAll('.nav__link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, {
+    threshold: 0.05,
+    rootMargin: '-80px 0px -40% 0px'
+  });
+
+  sections.forEach(section => activeLinkObserver.observe(section));
+
+
+  // ─── STAGGER SKILL CARDS ON MOBILE ────────────
+  if (window.innerWidth < 768) {
+    document.querySelectorAll('.skill-card').forEach((card, i) => {
+      card.style.transitionDelay = `${i * 0.1}s`;
+    });
+  }
+
+});
