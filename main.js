@@ -1,14 +1,18 @@
 /* ========================================
    LUIS REQUENA PORTFOLIO — CINEMATIC JS
-   Scroll reveal, nav effects, video modal,
-   mobile menu, parallax
+   Branch: grok — filters, reveals, modal
    ======================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  // ─── YEAR ─────────────────────────────────────
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+
   // ─── SCROLL REVEAL ────────────────────────────
-  const revealElements = document.querySelectorAll('.reveal, .reveal-scale');
-  
+  const revealElements = document.querySelectorAll('.reveal');
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -26,22 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── NAVBAR SCROLL EFFECT ─────────────────────
   const nav = document.getElementById('nav');
-  let lastScroll = 0;
 
   const handleNavScroll = () => {
-    const currentScroll = window.scrollY;
-    
-    if (currentScroll > 60) {
+    if (!nav) return;
+    if (window.scrollY > 60) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
     }
-
-    lastScroll = currentScroll;
   };
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll(); // Initial check
+  handleNavScroll();
 
 
   // ─── MOBILE MENU ──────────────────────────────
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Close menu on link click
     navLinks.querySelectorAll('.nav__link').forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('active');
@@ -64,10 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close menu on outside click
     document.addEventListener('click', (e) => {
-      if (navLinks.classList.contains('open') && 
-          !navLinks.contains(e.target) && 
+      if (navLinks.classList.contains('open') &&
+          !navLinks.contains(e.target) &&
           !navToggle.contains(e.target)) {
         navToggle.classList.remove('active');
         navLinks.classList.remove('open');
@@ -77,18 +75,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // ─── SMOOTH SCROLL FOR NAV LINKS ──────────────
+  // ─── SMOOTH SCROLL ────────────────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
-      if (targetId === '#') return;
-      
+      if (!targetId || targetId === '#') return;
+
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
         const navHeight = nav ? nav.offsetHeight : 0;
         const targetPos = targetEl.getBoundingClientRect().top + window.scrollY - navHeight;
-        
+
         window.scrollTo({
           top: targetPos,
           behavior: 'smooth'
@@ -103,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoIframe = document.getElementById('videoIframe');
   const videoModalClose = document.getElementById('videoModalClose');
 
-  // Open modal on project video link click
   document.querySelectorAll('[data-video]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -116,12 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Close modal
   const closeVideoModal = () => {
     if (videoModal && videoIframe) {
       videoModal.classList.remove('active');
       document.body.style.overflow = '';
-      // Delay iframe src clearing for smooth transition
       setTimeout(() => {
         videoIframe.src = '';
       }, 400);
@@ -134,13 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (videoModal) {
     videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) {
-        closeVideoModal();
-      }
+      if (e.target === videoModal) closeVideoModal();
     });
   }
 
-  // Close modal on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
       closeVideoModal();
@@ -150,25 +142,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── HERO PARALLAX ────────────────────────────
   const heroContent = document.querySelector('.hero__content');
-  
-  if (heroContent) {
+  const heroPhoto = document.querySelector('.hero__photo');
+
+  if (heroContent || heroPhoto) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
-      
+
       if (scrolled < heroHeight) {
-        const translateY = scrolled * 0.3;
-        const opacity = 1 - (scrolled / heroHeight) * 1.2;
-        heroContent.style.transform = `translateY(${translateY}px)`;
-        heroContent.style.opacity = Math.max(0, opacity);
+        if (heroContent) {
+          const translateY = scrolled * 0.25;
+          const opacity = 1 - (scrolled / heroHeight) * 1.15;
+          heroContent.style.transform = `translateY(${translateY}px)`;
+          heroContent.style.opacity = String(Math.max(0, opacity));
+        }
+        if (heroPhoto) {
+          heroPhoto.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
+        }
       }
     }, { passive: true });
   }
 
 
-  // ─── ACTIVE NAV LINK HIGHLIGHT ────────────────
+  // ─── ACTIVE NAV LINK ──────────────────────────
   const sections = document.querySelectorAll('section[id]');
-  
+
   const activeLinkObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -189,11 +187,81 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach(section => activeLinkObserver.observe(section));
 
 
-  // ─── STAGGER SKILL CARDS ON MOBILE ────────────
-  if (window.innerWidth < 768) {
-    document.querySelectorAll('.skill-card').forEach((card, i) => {
-      card.style.transitionDelay = `${i * 0.1}s`;
+  // ─── PROJECT FILTERS ──────────────────────────
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+  const toggleExtraBtn = document.getElementById('toggleExtraProjects');
+  const moreWrap = document.querySelector('.projects__more');
+  let showingExtra = false;
+  let currentFilter = 'all';
+
+  const applyProjectVisibility = () => {
+    projectCards.forEach(card => {
+      const stack = (card.getAttribute('data-stack') || '').split(/\s+/);
+      const isFeatured = card.getAttribute('data-featured') === 'true';
+      const isExtra = card.classList.contains('is-extra');
+
+      let matchesFilter = true;
+      if (currentFilter === 'featured') {
+        matchesFilter = isFeatured;
+      } else if (currentFilter !== 'all') {
+        matchesFilter = stack.includes(currentFilter);
+      }
+
+      const matchesCollapse =
+        currentFilter !== 'all' && currentFilter !== 'featured'
+          ? true
+          : (!isExtra || showingExtra || currentFilter === 'featured');
+
+      const visible = matchesFilter && matchesCollapse;
+
+      card.hidden = !visible;
+      card.classList.toggle('is-filtered-out', !visible);
+
+      if (visible && !card.classList.contains('revealed')) {
+        card.classList.add('revealed');
+      }
+    });
+
+    if (moreWrap) {
+      const extrasExist = [...projectCards].some(c => c.classList.contains('is-extra'));
+      const showToggle = extrasExist && (currentFilter === 'all');
+      moreWrap.classList.toggle('is-hidden', !showToggle);
+    }
+
+    if (toggleExtraBtn) {
+      toggleExtraBtn.textContent = showingExtra ? 'VER MENOS' : 'VER MÁS PROYECTOS';
+    }
+  };
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+
+      if (currentFilter !== 'all') {
+        showingExtra = true;
+      } else {
+        showingExtra = false;
+      }
+
+      applyProjectVisibility();
+    });
+  });
+
+  if (toggleExtraBtn) {
+    toggleExtraBtn.addEventListener('click', () => {
+      showingExtra = !showingExtra;
+      applyProjectVisibility();
+
+      if (showingExtra) {
+        const firstExtra = document.querySelector('.project-card.is-extra:not([hidden])');
+        firstExtra?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     });
   }
+
+  applyProjectVisibility();
 
 });
