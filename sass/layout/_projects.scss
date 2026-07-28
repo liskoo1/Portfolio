@@ -140,6 +140,14 @@
   line-height: 1;
   pointer-events: none;
   z-index: 1;
+  transition: color var(--transition-base), text-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.project-card:hover .project-card__number {
+  color: rgba(201, 169, 110, 0.4);
+  text-shadow: 0 0 24px var(--color-accent-glow);
+  transform: translateY(-2px);
 }
 
 .project-card__body {

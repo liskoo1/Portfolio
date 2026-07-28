@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
 
   // ─── SCROLL REVEAL ────────────────────────────
   const revealElements = document.querySelectorAll('.reveal');
@@ -89,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
           top: targetPos,
-          behavior: 'smooth'
+          behavior: scrollBehavior
         });
       }
     });
@@ -166,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroContent = document.querySelector('.hero__content');
   const heroPhoto = document.querySelector('.hero__photo');
 
-  if (heroContent || heroPhoto) {
+  if ((heroContent || heroPhoto) && !prefersReducedMotion) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
@@ -217,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let showingExtra = false;
   let currentFilter = 'all';
 
-  const applyProjectVisibility = () => {
+  const applyProjectVisibility = (animate = false) => {
     projectCards.forEach(card => {
       const stack = (card.getAttribute('data-stack') || '').split(/\s+/);
       const isFeatured = card.getAttribute('data-featured') === 'true';
@@ -239,6 +242,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.hidden = !visible;
       card.classList.toggle('is-filtered-out', !visible);
+
+      if (animate && visible) {
+        card.classList.remove('is-entering');
+        void card.offsetWidth;
+        card.classList.add('is-entering');
+      }
 
       if (visible && !card.classList.contains('revealed')) {
         card.classList.add('revealed');
@@ -268,14 +277,14 @@ document.addEventListener("DOMContentLoaded", () => {
         showingExtra = false;
       }
 
-      applyProjectVisibility();
+      applyProjectVisibility(true);
     });
   });
 
   if (toggleExtraBtn) {
     toggleExtraBtn.addEventListener('click', () => {
       showingExtra = !showingExtra;
-      applyProjectVisibility();
+      applyProjectVisibility(true);
 
       if (showingExtra) {
         const firstExtra = document.querySelector('.project-card.is-extra:not([hidden])');
@@ -348,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (toTop) {
     toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: scrollBehavior });
     });
   }
 
