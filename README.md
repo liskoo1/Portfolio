@@ -22,16 +22,16 @@ Portfolio personal con estética "Cinematic Dark" (fondo `#0A0A0A`, acentos dora
 
 ## Scripts
 
-| Comando | Descripción |
-| --- | --- |
-| `npm run dev` | Compila el CSS y arranca el dev server de Vite |
-| `npm run build` | Compila el CSS y genera `dist/` de producción |
-| `npm run preview` | Sirve el `dist/` generado |
-| `npm run build:css` | Compila `sass/app.scss` a `sass/style.css` |
-| `npm run watch:css` | Recompila el CSS al guardar |
-| `npm run optimize:images` | Convierte PNG a WebP, genera la og-image y parchea `index.html` |
-| `npm run lint` | ESLint |
-| `npm run format` / `format:check` | Prettier |
+| Comando                           | Descripción                                                     |
+| --------------------------------- | --------------------------------------------------------------- |
+| `npm run dev`                     | Compila el CSS y arranca el dev server de Vite                  |
+| `npm run build`                   | Compila el CSS y genera `dist/` de producción                   |
+| `npm run preview`                 | Sirve el `dist/` generado                                       |
+| `npm run build:css`               | Compila `sass/app.scss` a `sass/style.css`                      |
+| `npm run watch:css`               | Recompila el CSS al guardar                                     |
+| `npm run optimize:images`         | Convierte PNG a WebP, genera la og-image y parchea `index.html` |
+| `npm run lint`                    | ESLint                                                          |
+| `npm run format` / `format:check` | Prettier                                                        |
 
 ## Estructura
 

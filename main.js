@@ -367,4 +367,33 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: scrollBehavior });
     });
   }
+
+  // ─── RETRO EASTER EGG (Konami code) ─────────
+  const KONAMI = [
+    'ArrowUp',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+    'ArrowLeft',
+    'ArrowRight',
+    'b',
+    'a',
+  ];
+  let konamiIndex = 0;
+
+  document.addEventListener('keydown', (e) => {
+    const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+
+    if (key === KONAMI[konamiIndex]) {
+      konamiIndex += 1;
+      if (konamiIndex === KONAMI.length) {
+        konamiIndex = 0;
+        document.body.classList.toggle('retro-mode');
+      }
+    } else {
+      konamiIndex = key === KONAMI[0] ? 1 : 0;
+    }
+  });
 });
