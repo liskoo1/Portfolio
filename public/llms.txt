@@ -1,0 +1,19 @@
+# Luis Requena Mellado — Portfolio
+
+> Portfolio de Luis Requena Mellado, Full Stack Developer (web, desktop y mobile)
+> con Python, C#, .NET, JavaScript/TypeScript y React. Productos reales en
+> producción: IA-POL (ia-pol.es) y el ecosistema HelpMeAgro (helpmeagro.com).
+
+## Contenido
+
+- Sobre mí: perfil y trayectoria
+- Experiencia y formación: timeline profesional y estudios
+- Skills: lenguajes, backend, frontend, databases y herramientas
+- Proyectos: 13 trabajos reales con vídeos demo y repositorios
+- Contacto: luisrequenadev@outlook.com
+
+## Enlaces
+
+- [GitHub](https://github.com/liskoo1)
+- [LinkedIn](https://www.linkedin.com/in/luis-requena-mellado-b59123265/)
+- [CV (PDF)](https://liskoo1.github.io/Portfolio/cv/curriculum.pdf)

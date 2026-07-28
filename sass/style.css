@@ -1121,7 +1121,7 @@ main:focus-visible {
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.34);
   line-height: 1;
   pointer-events: none;
   z-index: 1;
@@ -1514,7 +1514,7 @@ main:focus-visible {
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 300;
-  color: var(--color-text-muted);
+  color: var(--color-text-secondary);
 }
 
 /* ========================================

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://liskoo1.github.io/Portfolio/sitemap.xml

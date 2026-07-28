@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio de Luis Requena Mellado — Full Stack Developer. Desarrollo web, desktop y mobile con Python, C#, JavaScript, React, .NET y más." />
     <meta name="author" content="Luis Requena Mellado" />
-    <link rel="icon" type="image/png" href="./public/img/logo_luis.png" />
+    <meta name="theme-color" content="#0A0A0A" />
+    <link rel="canonical" href="https://liskoo1.github.io/Portfolio/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Luis Requena Mellado — Full Stack Developer" />
+    <meta property="og:description" content="Desarrollo web, desktop y mobile con Python, C#, JavaScript, React, .NET y más. Productos reales en producción." />
+    <meta property="og:url" content="https://liskoo1.github.io/Portfolio/" />
+    <meta property="og:site_name" content="LRM DEV" />
+    <meta property="og:image" content="https://liskoo1.github.io/Portfolio/img/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Luis Requena Mellado — Full Stack Developer" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Luis Requena Mellado — Full Stack Developer" />
+    <meta name="twitter:description" content="Desarrollo web, desktop y mobile con Python, C#, JavaScript, React, .NET y más. Productos reales en producción." />
+    <meta name="twitter:image" content="https://liskoo1.github.io/Portfolio/img/og-image.jpg" />
+
+    <!-- Fonts (antes @import en CSS: bloqueaba el renderizado) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@200;300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" />
+
+    <link rel="icon" type="image/webp" href="./public/img/logo_luis.webp" />
     <link rel="stylesheet" href="./sass/style.css" />
     <title>Luis Requena Mellado — Full Stack Developer</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Luis Requena Mellado",
+      "url": "https://liskoo1.github.io/Portfolio/",
+      "email": "mailto:luisrequenadev@outlook.com",
+      "jobTitle": "Full Stack Developer",
+      "sameAs": [
+        "https://github.com/liskoo1",
+        "https://www.linkedin.com/in/luis-requena-mellado-b59123265/"
+      ]
+    }
+    </script>
   </head>
   <body>
 
@@ -17,7 +58,7 @@
     <nav class="nav" id="nav">
       <div class="nav__inner">
         <a href="#hero" class="nav__logo" aria-label="Inicio">
-          <img src="./public/img/logo_luis.png" alt="LRM DEV Logo" />
+          <img src="./public/img/logo_luis.webp" alt="LRM DEV Logo" width="892" height="280" decoding="async">
         </a>
 
         <ul class="nav__links" id="navLinks">
@@ -30,10 +71,10 @@
 
         <div class="nav__social">
           <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="nav__social-link" aria-label="GitHub">
-            <img src="./public/img/github.png" alt="" />
+            <img src="./public/img/github.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
           <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="nav__social-link" aria-label="LinkedIn">
-            <img src="./public/img/linkedin.png" alt="" />
+            <img src="./public/img/linkedin.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
         </div>
 
@@ -50,7 +91,7 @@
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
       <div class="hero__media" aria-hidden="true">
-        <img class="hero__photo" src="./public/img/desktop.png" alt="" />
+        <img class="hero__photo" src="./public/img/desktop.webp" alt="" width="433" height="577" decoding="async" fetchpriority="high">
         <div class="hero__veil"></div>
         <div class="hero__grain"></div>
       </div>
@@ -81,7 +122,7 @@
         <div class="container">
           <div class="about__layout">
             <div class="about__visual reveal">
-              <img class="about__photo" src="./public/img/desktop.png" alt="Luis Requena Mellado" />
+              <img class="about__photo" src="./public/img/desktop.webp" alt="Luis Requena Mellado" width="433" height="577" decoding="async" loading="lazy">
               <div class="about__accent" aria-hidden="true"></div>
             </div>
             <div class="about__content">
@@ -164,38 +205,38 @@
             <div class="skill-row reveal reveal-delay-1">
               <h3 class="skill-row__label">Lenguajes</h3>
               <ul class="skill-row__list">
-                <li class="skill-chip"><img src="./public/img/piton.png" alt="" /><span>Python</span></li>
-                <li class="skill-chip"><img src="./public/img/js.png" alt="" /><span>JavaScript</span></li>
+                <li class="skill-chip"><img src="./public/img/piton.webp" alt="" width="64" height="64" decoding="async" loading="lazy"><span>Python</span></li>
+                <li class="skill-chip"><img src="./public/img/js.webp" alt="" width="64" height="64" decoding="async" loading="lazy"><span>JavaScript</span></li>
                 <li class="skill-chip"><img src="./public/img/c.svg" alt="" /><span>C#</span></li>
-                <li class="skill-chip"><img src="./public/img/typescript.png" alt="" /><span>TypeScript</span></li>
+                <li class="skill-chip"><img src="./public/img/typescript.webp" alt="" width="64" height="64" decoding="async" loading="lazy"><span>TypeScript</span></li>
               </ul>
             </div>
 
             <div class="skill-row reveal reveal-delay-2">
               <h3 class="skill-row__label">Backend</h3>
               <ul class="skill-row__list">
-                <li class="skill-chip"><img src="./public/img/fastapi.png" alt="" /><span>FastAPI</span></li>
-                <li class="skill-chip"><img src="./public/img/net.png" alt="" /><span>.NET</span></li>
-                <li class="skill-chip"><img src="./public/img/nodejs.png" alt="" /><span>Node.js</span></li>
+                <li class="skill-chip"><img src="./public/img/fastapi.webp" alt="" width="512" height="512" decoding="async" loading="lazy"><span>FastAPI</span></li>
+                <li class="skill-chip"><img src="./public/img/net.webp" alt="" width="456" height="456" decoding="async" loading="lazy"><span>.NET</span></li>
+                <li class="skill-chip"><img src="./public/img/nodejs.webp" alt="" width="64" height="64" decoding="async" loading="lazy"><span>Node.js</span></li>
               </ul>
             </div>
 
             <div class="skill-row reveal reveal-delay-3">
               <h3 class="skill-row__label">Frontend</h3>
               <ul class="skill-row__list">
-                <li class="skill-chip"><img src="./public/img/html.png" alt="" /><span>HTML5</span></li>
-                <li class="skill-chip"><img src="./public/img/css.png" alt="" /><span>CSS</span></li>
-                <li class="skill-chip"><img src="./public/img/react.png" alt="" /><span>React</span></li>
-                <li class="skill-chip"><img src="./public/img/sass.png" alt="" /><span>SASS</span></li>
+                <li class="skill-chip"><img src="./public/img/html.webp" alt="" width="512" height="512" decoding="async" loading="lazy"><span>HTML5</span></li>
+                <li class="skill-chip"><img src="./public/img/css.webp" alt="" width="512" height="512" decoding="async" loading="lazy"><span>CSS</span></li>
+                <li class="skill-chip"><img src="./public/img/react.webp" alt="" width="128" height="128" decoding="async" loading="lazy"><span>React</span></li>
+                <li class="skill-chip"><img src="./public/img/sass.webp" alt="" width="512" height="512" decoding="async" loading="lazy"><span>SASS</span></li>
               </ul>
             </div>
 
             <div class="skill-row reveal reveal-delay-4">
               <h3 class="skill-row__label">Databases</h3>
               <ul class="skill-row__list">
-                <li class="skill-chip"><img src="./public/img/mysql.png" alt="" /><span>MySQL</span></li>
-                <li class="skill-chip"><img src="./public/img/sql-server.png" alt="" /><span>SQL Server</span></li>
-                <li class="skill-chip"><img src="./public/img/mongo.png" alt="" /><span>MongoDB</span></li>
+                <li class="skill-chip"><img src="./public/img/mysql.webp" alt="" width="512" height="512" decoding="async" loading="lazy"><span>MySQL</span></li>
+                <li class="skill-chip"><img src="./public/img/sql-server.webp" alt="" width="260" height="290" decoding="async" loading="lazy"><span>SQL Server</span></li>
+                <li class="skill-chip"><img src="./public/img/mongo.webp" alt="" width="160" height="160" decoding="async" loading="lazy"><span>MongoDB</span></li>
               </ul>
             </div>
 
@@ -203,10 +244,10 @@
               <h3 class="skill-row__label">Herramientas</h3>
               <ul class="skill-row__list">
                 <li class="skill-chip"><img src="./public/img/Vite.js.svg" alt="" /><span>Vite</span></li>
-                <li class="skill-chip"><img src="./public/img/netMaui.png" alt="" /><span>.NET MAUI</span></li>
+                <li class="skill-chip"><img src="./public/img/netMaui.webp" alt="" width="563" height="523" decoding="async" loading="lazy"><span>.NET MAUI</span></li>
                 <li class="skill-chip"><img src="./public/img/pandas.svg" alt="" /><span>Pandas</span></li>
                 <li class="skill-chip"><img src="./public/img/numpy.svg" alt="" /><span>NumPy</span></li>
-                <li class="skill-chip"><img src="./public/img/linux.png" alt="" /><span>Linux</span></li>
+                <li class="skill-chip"><img src="./public/img/linux.webp" alt="" width="64" height="64" decoding="async" loading="lazy"><span>Linux</span></li>
                 <li class="skill-chip"><img src="./public/img/git.svg" alt="" /><span>Git</span></li>
               </ul>
             </div>
@@ -221,12 +262,12 @@
           <h2 class="section-title reveal">Proyectos</h2>
           <p class="projects__intro reveal reveal-delay-1">Selección de trabajos reales — web, desktop, mobile e IA.</p>
 
-          <div class="projects__filters reveal reveal-delay-2" id="projectFilters" role="tablist" aria-label="Filtrar proyectos">
-            <button type="button" class="filter-btn is-active" data-filter="all">Todos</button>
-            <button type="button" class="filter-btn" data-filter="python">Python</button>
-            <button type="button" class="filter-btn" data-filter="csharp">C# / .NET</button>
-            <button type="button" class="filter-btn" data-filter="js">JS / React</button>
-            <button type="button" class="filter-btn" data-filter="featured">Destacados</button>
+          <div class="projects__filters reveal reveal-delay-2" id="projectFilters" aria-label="Filtrar proyectos">
+            <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">Todos</button>
+            <button type="button" class="filter-btn" data-filter="python" aria-pressed="false">Python</button>
+            <button type="button" class="filter-btn" data-filter="csharp" aria-pressed="false">C# / .NET</button>
+            <button type="button" class="filter-btn" data-filter="js" aria-pressed="false">JS / React</button>
+            <button type="button" class="filter-btn" data-filter="featured" aria-pressed="false">Destacados</button>
           </div>
 
           <div class="projects__grid" id="projectsGrid">
@@ -239,7 +280,7 @@
               </div>
               <div class="project-card__body">
                 <div class="project-card__header">
-                  <div class="project-card__icon"><img src="./public/img/piton.png" alt="" /></div>
+                  <div class="project-card__icon"><img src="./public/img/piton.webp" alt="" width="64" height="64" decoding="async" loading="lazy"></div>
                   <h3 class="project-card__title">App OCR con IA</h3>
                 </div>
                 <p class="project-card__description">
@@ -266,7 +307,7 @@
               </div>
               <div class="project-card__body">
                 <div class="project-card__header">
-                  <div class="project-card__icon"><img src="./public/img/piton.png" alt="" /></div>
+                  <div class="project-card__icon"><img src="./public/img/piton.webp" alt="" width="64" height="64" decoding="async" loading="lazy"></div>
                   <h3 class="project-card__title">Web Revepetrol</h3>
                 </div>
                 <p class="project-card__description">
@@ -293,7 +334,7 @@
               </div>
               <div class="project-card__body">
                 <div class="project-card__header">
-                  <div class="project-card__icon"><img src="./public/img/js.png" alt="" /></div>
+                  <div class="project-card__icon"><img src="./public/img/js.webp" alt="" width="64" height="64" decoding="async" loading="lazy"></div>
                   <h3 class="project-card__title">Semana Santa Níjar</h3>
                 </div>
                 <p class="project-card__description">
@@ -314,12 +355,12 @@
             <!-- 04 IA-POL -->
             <article class="project-card is-featured reveal reveal-delay-1" data-stack="js csharp" data-featured="true">
               <div class="project-card__media project-card__media--gradient project-card__media--react">
-                <img src="./public/img/react.png" alt="" class="project-card__media-icon" />
+                <img src="./public/img/react.webp" alt="" class="project-card__media-icon" width="128" height="128" decoding="async" loading="lazy">
                 <span class="project-card__number">04</span>
               </div>
               <div class="project-card__body">
                 <div class="project-card__header">
-                  <div class="project-card__icon"><img src="./public/img/react.png" alt="" /></div>
+                  <div class="project-card__icon"><img src="./public/img/react.webp" alt="" width="128" height="128" decoding="async" loading="lazy"></div>
                   <h3 class="project-card__title">IA-POL</h3>
                 </div>
                 <p class="project-card__description">
@@ -463,12 +504,12 @@
             <!-- 10 Creador IA -->
             <article class="project-card is-featured reveal reveal-delay-1" data-stack="js" data-featured="true">
               <div class="project-card__media project-card__media--gradient project-card__media--ai">
-                <img src="./public/img/nodejs.png" alt="" class="project-card__media-icon" />
+                <img src="./public/img/nodejs.webp" alt="" class="project-card__media-icon" width="64" height="64" decoding="async" loading="lazy">
                 <span class="project-card__number">10</span>
               </div>
               <div class="project-card__body">
                 <div class="project-card__header">
-                  <div class="project-card__icon"><img src="./public/img/js.png" alt="" /></div>
+                  <div class="project-card__icon"><img src="./public/img/js.webp" alt="" width="64" height="64" decoding="async" loading="lazy"></div>
                   <h3 class="project-card__title">Creador de Contenido con IA</h3>
                 </div>
                 <p class="project-card__description">
@@ -491,7 +532,7 @@
             <!-- 11 HelpMeAgro API -->
             <article class="project-card is-extra reveal" data-stack="csharp" hidden>
               <div class="project-card__media project-card__media--gradient project-card__media--net">
-                <img src="./public/img/net.png" alt="" class="project-card__media-icon" />
+                <img src="./public/img/net.webp" alt="" class="project-card__media-icon" width="456" height="456" decoding="async" loading="lazy">
                 <span class="project-card__number">11</span>
               </div>
               <div class="project-card__body">
@@ -543,7 +584,7 @@
             <!-- 13 HelpMeAgro Mobile -->
             <article class="project-card is-extra reveal" data-stack="csharp" hidden>
               <div class="project-card__media project-card__media--gradient project-card__media--maui">
-                <img src="./public/img/netMaui.png" alt="" class="project-card__media-icon" />
+                <img src="./public/img/netMaui.webp" alt="" class="project-card__media-icon" width="563" height="523" decoding="async" loading="lazy">
                 <span class="project-card__number">13</span>
               </div>
               <div class="project-card__body">
@@ -595,10 +636,10 @@
         <button type="button" class="contact__copy reveal reveal-delay-2" id="copyEmail" data-email="luisrequenadev@outlook.com">Copiar email</button>
         <div class="contact__social reveal reveal-delay-3">
           <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="contact__social-link" aria-label="GitHub">
-            <img src="./public/img/github.png" alt="" />
+            <img src="./public/img/github.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
           <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="contact__social-link" aria-label="LinkedIn">
-            <img src="./public/img/linkedin.png" alt="" />
+            <img src="./public/img/linkedin.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
         </div>
         <div class="contact__ctas reveal reveal-delay-4">
@@ -612,14 +653,14 @@
     <footer class="footer">
       <div class="container">
         <a href="#hero" class="footer__logo" aria-label="Volver al inicio">
-          <img src="./public/img/logo_luis.png" alt="LRM DEV" />
+          <img src="./public/img/logo_luis.webp" alt="LRM DEV" width="892" height="280" decoding="async">
         </a>
         <div class="footer__social">
           <a href="https://github.com/liskoo1" target="_blank" rel="noopener" class="footer__social-link" aria-label="GitHub">
-            <img src="./public/img/github.png" alt="" />
+            <img src="./public/img/github.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
           <a href="https://www.linkedin.com/in/luis-requena-mellado-b59123265/" target="_blank" rel="noopener" class="footer__social-link" aria-label="LinkedIn">
-            <img src="./public/img/linkedin.png" alt="" />
+            <img src="./public/img/linkedin.webp" alt="" width="64" height="64" decoding="async" loading="lazy">
           </a>
         </div>
         <p class="footer__copyright">© <span id="year"></span> Luis Requena Mellado</p>
