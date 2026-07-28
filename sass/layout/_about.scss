@@ -1,0 +1,96 @@
+/* ========================================
+   ABOUT — editorial, no glass card
+   ======================================== */
+.about {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-primary);
+  position: relative;
+}
+
+.about__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about__visual {
+  position: relative;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.about__photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(15%) contrast(1.06);
+  transition: filter var(--transition-base), transform var(--transition-slow);
+}
+
+.about__visual:hover .about__photo {
+  filter: grayscale(0%) contrast(1.1);
+  transform: scale(1.015);
+}
+
+.about__accent {
+  position: absolute;
+  inset: auto -16px -16px auto;
+  width: 55%;
+  height: 55%;
+  border: 1px solid var(--color-border);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about__eyebrow {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.about__name {
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.about__role {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.about__bio {
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+  max-width: 540px;
+}
+
+.about__bio--highlight {
+  color: var(--color-text-primary);
+  font-weight: 400;
+  border-left: 2px solid var(--color-accent);
+  padding-left: 18px;
+  margin: 28px 0 36px;
+}
+
+.about__bio a {
+  color: var(--color-accent);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+.about__bio a:hover {
+  border-color: var(--color-accent);
+}

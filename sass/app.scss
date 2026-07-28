@@ -1,8 +1,25 @@
-@use 'abstracts/abstracts';
-@use 'vendors/vendors';
+/* ========================================
+   LUIS REQUENA PORTFOLIO — CINEMATIC DARK
+   7-1 architecture — compile: npm run build:css
+   ======================================== */
+
+@use 'abstracts/tokens';
+
+@use 'base/reset';
+@use 'base/fonts';
 @use 'base/base';
-@use 'components/components';
-@use 'layout/layout';
-@use 'pages/pages';
-@use 'themes/themes';
-@use 'settings';
+@use 'base/animations';
+
+@use 'components/buttons';
+
+@use 'layout/nav';
+@use 'layout/hero';
+@use 'layout/about';
+@use 'layout/skills';
+@use 'layout/projects';
+@use 'layout/video-modal';
+@use 'layout/contact';
+@use 'layout/footer';
+
+// Responsive overrides must stay last to preserve the cascade.
+@use 'base/responsive';

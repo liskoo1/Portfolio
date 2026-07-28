@@ -1,0 +1,56 @@
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+}
+
+.btn-outline {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+  box-shadow: 0 0 30px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-filled {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-filled:hover {
+  background: var(--color-accent-bright);
+  border-color: var(--color-accent-bright);
+  box-shadow: 0 0 30px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-arrow::after {
+  content: '→';
+  font-size: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(4px);
+}

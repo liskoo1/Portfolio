@@ -1,3 +1,28 @@
-@use 'animations';
-@use 'reset';
-@use 'typography';
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 42px);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.section-title::before {
+  content: '« ';
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.section-title::after {
+  content: ' »';
+  font-weight: 400;
+  opacity: 0.7;
+}

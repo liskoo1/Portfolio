@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:css": "sass sass/app.scss sass/style.css --style=expanded --no-source-map",
+    "watch:css": "sass --watch sass/app.scss sass/style.css --style=expanded --no-source-map",
+    "predev": "npm run build:css",
+    "prebuild": "npm run build:css"
   },
   "devDependencies": {
+    "sass": "^1.80.5",
     "vite": "^5.2.0"
-  },
-  "dependencies": {
-    "sass": "^1.80.5"
   }
 }

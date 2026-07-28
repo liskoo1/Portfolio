@@ -1,10 +1,8 @@
+@charset "UTF-8";
 /* ========================================
    LUIS REQUENA PORTFOLIO — CINEMATIC DARK
-   Branch: grok — visual upgrade
+   7-1 architecture — compile: npm run build:css
    ======================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Raleway:wght@200;300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
-
 :root {
   --color-bg-primary: #0A0A0A;
   --color-bg-secondary: #111111;
@@ -21,15 +19,12 @@
   --color-overlay: rgba(10, 10, 10, 0.72);
   --color-glass: rgba(20, 20, 20, 0.8);
   --color-glass-border: rgba(255, 255, 255, 0.06);
-
-  --font-display: 'Playfair Display', 'Georgia', serif;
-  --font-body: 'Raleway', 'Helvetica Neue', sans-serif;
-  --font-label: 'Montserrat', 'Arial', sans-serif;
-
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Raleway", "Helvetica Neue", sans-serif;
+  --font-label: "Montserrat", "Arial", sans-serif;
   --section-padding: 120px;
   --container-width: 1200px;
   --border-radius: 2px;
-
   --transition-fast: 0.2s ease;
   --transition-base: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-slow: 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -88,6 +83,14 @@ h1, h2, h3, h4 {
   color: var(--color-bg-primary);
 }
 
+/* --- Local fonts (retro easter egg) --- */
+@font-face {
+  font-family: "Press Start 2P";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../public/fonts/PressStart2P-Regular.woff2") format("woff2");
+}
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -106,13 +109,13 @@ h1, h2, h3, h4 {
 }
 
 .section-title::before {
-  content: '« ';
+  content: "« ";
   font-weight: 400;
   opacity: 0.7;
 }
 
 .section-title::after {
-  content: ' »';
+  content: " »";
   font-weight: 400;
   opacity: 0.7;
 }
@@ -129,11 +132,25 @@ h1, h2, h3, h4 {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
 
 /* --- Hero entrance --- */
 .hero-enter {
@@ -142,10 +159,21 @@ h1, h2, h3, h4 {
   animation: heroEnter 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-enter-delay-1 { animation-delay: 0.15s; }
-.hero-enter-delay-2 { animation-delay: 0.3s; }
-.hero-enter-delay-3 { animation-delay: 0.45s; }
-.hero-enter-delay-4 { animation-delay: 0.6s; }
+.hero-enter-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.hero-enter-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.hero-enter-delay-3 {
+  animation-delay: 0.45s;
+}
+
+.hero-enter-delay-4 {
+  animation-delay: 0.6s;
+}
 
 @keyframes heroEnter {
   to {
@@ -153,7 +181,6 @@ h1, h2, h3, h4 {
     transform: translateY(0);
   }
 }
-
 /* --- Buttons --- */
 .btn {
   display: inline-flex;
@@ -202,7 +229,7 @@ h1, h2, h3, h4 {
 }
 
 .btn-arrow::after {
-  content: '→';
+  content: "→";
   font-size: 14px;
   transition: transform var(--transition-fast);
 }
@@ -271,7 +298,7 @@ h1, h2, h3, h4 {
 }
 
 .nav__link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -382,16 +409,14 @@ h1, h2, h3, h4 {
 }
 
 @keyframes heroZoom {
-  to { transform: scale(1); }
+  to {
+    transform: scale(1);
+  }
 }
-
 .hero__veil {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.72) 38%, rgba(10, 10, 10, 0.28) 68%, rgba(10, 10, 10, 0.18) 100%),
-    linear-gradient(0deg, rgba(10, 10, 10, 0.88) 0%, transparent 42%),
-    radial-gradient(ellipse at 72% 28%, rgba(201, 169, 110, 0.1), transparent 52%);
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.72) 38%, rgba(10, 10, 10, 0.28) 68%, rgba(10, 10, 10, 0.18) 100%), linear-gradient(0deg, rgba(10, 10, 10, 0.88) 0%, transparent 42%), radial-gradient(ellipse at 72% 28%, rgba(201, 169, 110, 0.1), transparent 52%);
 }
 
 .hero__grain {
@@ -487,17 +512,33 @@ h1, h2, h3, h4 {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
-
 @keyframes scroll-line {
-  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-  50.01% { transform-origin: bottom; }
-  100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.01% {
+    transform-origin: bottom;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }
-
 /* ========================================
    ABOUT — editorial, no glass card
    ======================================== */
@@ -605,7 +646,7 @@ h1, h2, h3, h4 {
 }
 
 .skills::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -761,7 +802,7 @@ h1, h2, h3, h4 {
 
 .project-card__media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16/10;
   overflow: hidden;
   background: var(--color-bg-tertiary);
 }
@@ -914,7 +955,7 @@ h1, h2, h3, h4 {
 }
 
 .project-link::after {
-  content: '→';
+  content: "→";
 }
 
 .projects__more {
@@ -1007,15 +1048,12 @@ h1, h2, h3, h4 {
 .contact__atmosphere {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at 50% 100%, rgba(201, 169, 110, 0.12) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 0%, rgba(11, 20, 38, 0.8) 0%, transparent 50%),
-    linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+  background: radial-gradient(ellipse at 50% 100%, rgba(201, 169, 110, 0.12) 0%, transparent 55%), radial-gradient(ellipse at 20% 0%, rgba(11, 20, 38, 0.8) 0%, transparent 50%), linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
   pointer-events: none;
 }
 
 .contact::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1056,7 +1094,7 @@ h1, h2, h3, h4 {
 }
 
 .contact__email::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -1131,7 +1169,7 @@ h1, h2, h3, h4 {
 }
 
 .footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -1199,66 +1237,53 @@ h1, h2, h3, h4 {
     grid-template-columns: 0.9fr 1.1fr;
     gap: 64px;
   }
-
   .about__visual {
     margin: 0;
   }
-
   .skill-row {
     grid-template-columns: 160px 1fr;
     gap: 32px;
     align-items: start;
   }
-
   .projects__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (min-width: 1024px) {
   .about__layout {
     gap: 96px;
   }
-
   .hero {
     align-items: center;
     padding-bottom: 0;
   }
-
   .project-card {
     grid-template-columns: 1.05fr 1fr;
     min-height: 280px;
   }
-
   .project-card__media {
     aspect-ratio: auto;
     min-height: 100%;
   }
-
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
-
   .project-card:nth-child(even) .project-card__media {
     order: 2;
   }
-
   .project-card:nth-child(even) .project-card__body {
     order: 1;
   }
 }
-
 @media (max-width: 767px) {
   :root {
     --section-padding: 80px;
   }
-
   .section-title {
     font-size: 28px;
     margin-bottom: 20px;
   }
-
   .nav__links {
     position: fixed;
     top: 0;
@@ -1276,72 +1301,57 @@ h1, h2, h3, h4 {
     transition: right var(--transition-base);
     border-left: 1px solid var(--color-glass-border);
   }
-
   .nav__links.open {
     right: 0;
   }
-
   .nav__link {
     font-size: 14px;
   }
-
   .nav__social {
     display: none;
   }
-
   .nav__toggle {
     display: flex;
   }
-
   .hero {
     align-items: flex-end;
     padding-bottom: 18vh;
   }
-
   .hero__name {
     font-size: 40px;
     letter-spacing: 0.04em;
   }
-
   .hero__ctas {
     flex-direction: column;
     align-items: stretch;
   }
-
   .hero__ctas .btn {
     width: 100%;
     max-width: 280px;
   }
-
   .hero__scroll {
     right: 50%;
     transform: translateX(50%);
     bottom: 20px;
   }
-
   .about__visual {
     max-width: 280px;
   }
-
   .contact__ctas {
     flex-direction: column;
     align-items: center;
   }
-
   .contact__ctas .btn {
     width: 100%;
     max-width: 280px;
   }
-
   .project-card__body {
     padding: 22px;
   }
-
   .project-card__title {
     font-size: 18px;
   }
 }
-
 .sr-only {
   position: absolute;
   width: 1px;

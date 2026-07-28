@@ -1,0 +1,87 @@
+/* ========================================
+   SKILLS — editorial rows (no cards)
+   ======================================== */
+.skills {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-secondary);
+  position: relative;
+}
+
+.skills::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.skills .section-title {
+  margin-bottom: 64px;
+}
+
+.skills__editorial {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skill-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: background var(--transition-fast);
+}
+
+.skill-row:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-row:hover {
+  background: rgba(201, 169, 110, 0.03);
+}
+
+.skill-row__label {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  padding-top: 6px;
+}
+
+.skill-row__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  align-items: center;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.skill-chip img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.skill-chip:hover {
+  color: var(--color-text-primary);
+  transform: translateX(4px);
+}
