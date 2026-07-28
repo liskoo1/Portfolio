@@ -30,7 +30,8 @@ for (const file of pngs) {
   const tagRe = new RegExp(`<img\\b[^>]*src="\\./public/img/${name}\\.webp"[^>]*>`, 'g');
   html = html.replace(tagRe, (tag) => {
     let next = tag;
-    if (!/\swidth=/.test(next)) next = next.replace(/>$/, ` width="${meta.width}" height="${meta.height}">`);
+    if (!/\swidth=/.test(next))
+      next = next.replace(/>$/, ` width="${meta.width}" height="${meta.height}">`);
     if (!/\sdecoding=/.test(next)) next = next.replace(/>$/, ' decoding="async">');
     if (!/\sloading=/.test(next)) {
       const isHero = /hero__photo/.test(next);

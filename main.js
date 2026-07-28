@@ -3,8 +3,7 @@
    Branch: grok — filters, reveals, modal
    ======================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener('DOMContentLoaded', () => {
   // ─── YEAR ─────────────────────────────────────
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -12,24 +11,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
-
   // ─── SCROLL REVEAL ────────────────────────────
   const revealElements = document.querySelectorAll('.reveal');
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
-  });
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+    }
+  );
 
-  revealElements.forEach(el => revealObserver.observe(el));
-
+  revealElements.forEach((el) => revealObserver.observe(el));
 
   // ─── NAVBAR SCROLL EFFECT ─────────────────────
   const nav = document.getElementById('nav');
@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', handleNavScroll, { passive: true });
   handleNavScroll();
 
-
   // ─── MOBILE MENU ──────────────────────────────
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    navLinks.querySelectorAll('.nav__link').forEach(link => {
+    navLinks.querySelectorAll('.nav__link').forEach((link) => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('active');
         navLinks.classList.remove('open');
@@ -67,9 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener('click', (e) => {
-      if (navLinks.classList.contains('open') &&
-          !navLinks.contains(e.target) &&
-          !navToggle.contains(e.target)) {
+      if (
+        navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !navToggle.contains(e.target)
+      ) {
         navToggle.classList.remove('active');
         navLinks.classList.remove('open');
         document.body.style.overflow = '';
@@ -77,9 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   // ─── SMOOTH SCROLL ────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');
       if (!targetId || targetId === '#') return;
@@ -92,12 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.scrollTo({
           top: targetPos,
-          behavior: scrollBehavior
+          behavior: scrollBehavior,
         });
       }
     });
   });
-
 
   // ─── VIDEO MODAL ──────────────────────────────
   const videoModal = document.getElementById('videoModal');
@@ -106,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
 
-  document.querySelectorAll('[data-video]').forEach(link => {
+  document.querySelectorAll('[data-video]').forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const videoUrl = link.getAttribute('data-video');
@@ -150,7 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (e.key === 'Tab') {
-      const focusables = videoModal.querySelectorAll('button, iframe, [tabindex]:not([tabindex="-1"])');
+      const focusables = videoModal.querySelectorAll(
+        'button, iframe, [tabindex]:not([tabindex="-1"])'
+      );
       if (!focusables.length) return;
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
@@ -164,53 +165,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
   // ─── HERO PARALLAX ────────────────────────────
   const heroContent = document.querySelector('.hero__content');
   const heroPhoto = document.querySelector('.hero__photo');
 
   if ((heroContent || heroPhoto) && !prefersReducedMotion) {
-    window.addEventListener('scroll', () => {
-      const scrolled = window.scrollY;
-      const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
+    window.addEventListener(
+      'scroll',
+      () => {
+        const scrolled = window.scrollY;
+        const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
 
-      if (scrolled < heroHeight) {
-        if (heroContent) {
-          const translateY = scrolled * 0.25;
-          const opacity = 1 - (scrolled / heroHeight) * 1.15;
-          heroContent.style.transform = `translateY(${translateY}px)`;
-          heroContent.style.opacity = String(Math.max(0, opacity));
+        if (scrolled < heroHeight) {
+          if (heroContent) {
+            const translateY = scrolled * 0.25;
+            const opacity = 1 - (scrolled / heroHeight) * 1.15;
+            heroContent.style.transform = `translateY(${translateY}px)`;
+            heroContent.style.opacity = String(Math.max(0, opacity));
+          }
+          if (heroPhoto) {
+            heroPhoto.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
+          }
         }
-        if (heroPhoto) {
-          heroPhoto.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
-        }
-      }
-    }, { passive: true });
+      },
+      { passive: true }
+    );
   }
-
 
   // ─── ACTIVE NAV LINK ──────────────────────────
   const sections = document.querySelectorAll('section[id]');
 
-  const activeLinkObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        document.querySelectorAll('.nav__link').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }, {
-    threshold: 0.05,
-    rootMargin: '-80px 0px -40% 0px'
-  });
+  const activeLinkObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          document.querySelectorAll('.nav__link').forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.05,
+      rootMargin: '-80px 0px -40% 0px',
+    }
+  );
 
-  sections.forEach(section => activeLinkObserver.observe(section));
-
+  sections.forEach((section) => activeLinkObserver.observe(section));
 
   // ─── PROJECT FILTERS ──────────────────────────
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -221,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentFilter = 'all';
 
   const applyProjectVisibility = (animate = false) => {
-    projectCards.forEach(card => {
+    projectCards.forEach((card) => {
       const stack = (card.getAttribute('data-stack') || '').split(/\s+/);
       const isFeatured = card.getAttribute('data-featured') === 'true';
       const isExtra = card.classList.contains('is-extra');
@@ -236,7 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const matchesCollapse =
         currentFilter !== 'all' && currentFilter !== 'featured'
           ? true
-          : (!isExtra || showingExtra || currentFilter === 'featured');
+          : !isExtra || showingExtra || currentFilter === 'featured';
 
       const visible = matchesFilter && matchesCollapse;
 
@@ -255,8 +260,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (moreWrap) {
-      const extrasExist = [...projectCards].some(c => c.classList.contains('is-extra'));
-      const showToggle = extrasExist && (currentFilter === 'all');
+      const extrasExist = [...projectCards].some((c) => c.classList.contains('is-extra'));
+      const showToggle = extrasExist && currentFilter === 'all';
       moreWrap.classList.toggle('is-hidden', !showToggle);
     }
 
@@ -265,9 +270,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  filterBtns.forEach(btn => {
+  filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
+      filterBtns.forEach((b) => {
         b.classList.remove('is-active');
         b.setAttribute('aria-pressed', 'false');
       });
@@ -299,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   applyProjectVisibility();
 
-
   // ─── COPY EMAIL ─────────────────────────────
   const copyBtn = document.getElementById('copyEmail');
 
@@ -308,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     copyBtn.addEventListener('click', async () => {
       const email = copyBtn.getAttribute('data-email') || '';
-      let copied = false;
+      let copied;
 
       try {
         await navigator.clipboard.writeText(email);
@@ -337,7 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   // ─── SCROLL PROGRESS + BACK TO TOP ──────────
   const progressBar = document.getElementById('scrollProgress');
   const toTop = document.getElementById('toTop');
@@ -364,5 +367,4 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: scrollBehavior });
     });
   }
-
 });

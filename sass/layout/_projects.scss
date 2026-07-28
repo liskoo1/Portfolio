@@ -61,7 +61,10 @@
   background: transparent;
   border: 1px solid var(--color-border);
   overflow: hidden;
-  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .project-card.is-filtered-out {
@@ -121,7 +124,9 @@
   height: 72px;
   object-fit: contain;
   opacity: 0.85;
-  transition: transform var(--transition-base), opacity var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
 }
 
 .project-card:hover .project-card__media-icon {
@@ -140,7 +145,9 @@
   line-height: 1;
   pointer-events: none;
   z-index: 1;
-  transition: color var(--transition-base), text-shadow var(--transition-base),
+  transition:
+    color var(--transition-base),
+    text-shadow var(--transition-base),
     transform var(--transition-base);
 }
 

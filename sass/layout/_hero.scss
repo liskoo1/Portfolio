@@ -29,14 +29,22 @@
 }
 
 @keyframes heroZoom {
-  to { transform: scale(1); }
+  to {
+    transform: scale(1);
+  }
 }
 
 .hero__veil {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.72) 38%, rgba(10, 10, 10, 0.28) 68%, rgba(10, 10, 10, 0.18) 100%),
+    linear-gradient(
+      90deg,
+      rgba(10, 10, 10, 0.94) 0%,
+      rgba(10, 10, 10, 0.72) 38%,
+      rgba(10, 10, 10, 0.28) 68%,
+      rgba(10, 10, 10, 0.18) 100%
+    ),
     linear-gradient(0deg, rgba(10, 10, 10, 0.88) 0%, transparent 42%),
     radial-gradient(ellipse at 72% 28%, rgba(201, 169, 110, 0.1), transparent 52%);
 }
@@ -134,13 +142,32 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes scroll-line {
-  0% { opacity: 0; transform: scaleY(0); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); transform-origin: top; }
-  50.01% { transform-origin: bottom; }
-  100% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  0% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.01% {
+    transform-origin: bottom;
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
 }

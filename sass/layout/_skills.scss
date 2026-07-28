@@ -70,7 +70,9 @@
   font-size: 15px;
   font-weight: 400;
   color: var(--color-text-secondary);
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .skill-chip img {

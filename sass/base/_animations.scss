@@ -2,7 +2,9 @@
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
 }
 
 .reveal.revealed {
@@ -10,11 +12,21 @@
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.5s;
+}
 
 /* --- Hero entrance --- */
 .hero-enter {
@@ -23,10 +35,18 @@
   animation: heroEnter 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.hero-enter-delay-1 { animation-delay: 0.15s; }
-.hero-enter-delay-2 { animation-delay: 0.3s; }
-.hero-enter-delay-3 { animation-delay: 0.45s; }
-.hero-enter-delay-4 { animation-delay: 0.6s; }
+.hero-enter-delay-1 {
+  animation-delay: 0.15s;
+}
+.hero-enter-delay-2 {
+  animation-delay: 0.3s;
+}
+.hero-enter-delay-3 {
+  animation-delay: 0.45s;
+}
+.hero-enter-delay-4 {
+  animation-delay: 0.6s;
+}
 
 @keyframes heroEnter {
   to {
