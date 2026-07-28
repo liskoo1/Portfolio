@@ -637,6 +637,118 @@ h1, h2, h3, h4 {
 }
 
 /* ========================================
+   EXPERIENCE — timeline & education
+   ======================================== */
+.experience {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-secondary);
+}
+
+.experience__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 64px;
+  margin-top: 56px;
+}
+
+/* --- Timeline --- */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-accent), rgba(201, 169, 110, 0.05));
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: -36.5px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 12px var(--color-accent-glow);
+}
+
+.timeline__period {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.timeline__role {
+  font-size: 20px;
+  margin: 8px 0 10px;
+}
+
+.timeline__description {
+  color: var(--color-text-secondary);
+  font-size: 15px;
+  max-width: 52ch;
+}
+
+/* --- Education --- */
+.education {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education__item {
+  padding: 24px 28px;
+  background: var(--color-glass);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.education__item:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px);
+}
+
+.education__title {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.education__place {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.education__description {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+
+/* ========================================
    SKILLS — editorial rows (no cards)
    ======================================== */
 .skills {
@@ -966,6 +1078,28 @@ h1, h2, h3, h4 {
 
 .projects__more.is-hidden {
   display: none;
+}
+
+.project-card__impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent-bright);
+  margin: -6px 0 16px;
+}
+
+.project-card__impact::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-bright);
+  box-shadow: 0 0 10px var(--color-accent-bright);
 }
 
 /* ========================================

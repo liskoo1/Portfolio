@@ -241,3 +241,25 @@
 .projects__more.is-hidden {
   display: none;
 }
+
+.project-card__impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent-bright);
+  margin: -6px 0 16px;
+}
+
+.project-card__impact::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-bright);
+  box-shadow: 0 0 10px var(--color-accent-bright);
+}
