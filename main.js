@@ -101,14 +101,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoIframe = document.getElementById('videoIframe');
   const videoModalClose = document.getElementById('videoModalClose');
 
+  let lastFocusedElement = null;
+
   document.querySelectorAll('[data-video]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const videoUrl = link.getAttribute('data-video');
       if (videoUrl && videoModal && videoIframe) {
+        lastFocusedElement = document.activeElement;
         videoIframe.src = videoUrl;
         videoModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        videoModalClose?.focus();
       }
     });
   });
@@ -117,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (videoModal && videoIframe) {
       videoModal.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocusedElement) lastFocusedElement.focus();
       setTimeout(() => {
         videoIframe.src = '';
       }, 400);
@@ -134,8 +139,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && videoModal?.classList.contains('active')) {
+    if (!videoModal?.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
       closeVideoModal();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusables = videoModal.querySelectorAll('button, iframe, [tabindex]:not([tabindex="-1"])');
+      if (!focusables.length) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 
@@ -263,5 +285,71 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   applyProjectVisibility();
+
+
+  // ─── COPY EMAIL ─────────────────────────────
+  const copyBtn = document.getElementById('copyEmail');
+
+  if (copyBtn) {
+    const originalLabel = copyBtn.textContent;
+
+    copyBtn.addEventListener('click', async () => {
+      const email = copyBtn.getAttribute('data-email') || '';
+      let copied = false;
+
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch {
+        const helper = document.createElement('textarea');
+        helper.value = email;
+        helper.style.position = 'fixed';
+        helper.style.opacity = '0';
+        document.body.appendChild(helper);
+        helper.select();
+        try {
+          copied = document.execCommand('copy');
+        } catch {
+          copied = false;
+        }
+        helper.remove();
+      }
+
+      copyBtn.textContent = copied ? '¡Copiado!' : 'Error al copiar';
+      copyBtn.classList.add('is-copied');
+      setTimeout(() => {
+        copyBtn.textContent = originalLabel;
+        copyBtn.classList.remove('is-copied');
+      }, 2000);
+    });
+  }
+
+
+  // ─── SCROLL PROGRESS + BACK TO TOP ──────────
+  const progressBar = document.getElementById('scrollProgress');
+  const toTop = document.getElementById('toTop');
+
+  const handleScrollExtras = () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (progressBar) {
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = `${pct}%`;
+    }
+
+    if (toTop) {
+      toTop.classList.toggle('is-visible', scrollTop > 600);
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollExtras, { passive: true });
+  handleScrollExtras();
+
+  if (toTop) {
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
 });
