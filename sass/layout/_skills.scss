@@ -87,3 +87,57 @@
   color: var(--color-text-primary);
   transform: translateX(4px);
 }
+
+.skill-chip--ai {
+  align-items: flex-start;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  background: linear-gradient(135deg, rgba(201, 169, 110, 0.08), rgba(201, 169, 110, 0.02));
+  gap: 12px;
+}
+
+.skill-chip--ai:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.skill-ai {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(10, 10, 10, 0.55);
+  border: 1px solid rgba(201, 169, 110, 0.25);
+}
+
+.skill-ai img {
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+}
+
+.skill-ai__title,
+.skill-ai__meta {
+  display: block;
+}
+
+.skill-ai__title {
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.skill-ai__meta {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+}

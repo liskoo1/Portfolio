@@ -11,6 +11,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
 
+  // ─── HERO VANTA CELLS ─────────────────────────
+  const heroVantaEl = document.getElementById('heroVanta');
+  let vantaEffect = null;
+
+  if (heroVantaEl && !prefersReducedMotion) {
+    Promise.all([import('three'), import('vanta/dist/vanta.cells.min')])
+      .then(([THREE, cellsMod]) => {
+        const CELLS = cellsMod.default || cellsMod;
+        vantaEffect = CELLS({
+          el: heroVantaEl,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200,
+          minWidth: 200,
+          scale: 1,
+          color1: 0x2a2118,
+          color2: 0xc9a96e,
+          backgroundColor: 0x0a0a0a,
+          size: 1.8,
+          speed: 0.9,
+        });
+      })
+      .catch((err) => {
+        console.warn('Vanta Cells no pudo inicializarse:', err);
+      });
+  }
+
+  window.addEventListener('beforeunload', () => {
+    if (vantaEffect) vantaEffect.destroy();
+  });
+
   // ─── SCROLL REVEAL ────────────────────────────
   const revealElements = document.querySelectorAll('.reveal');
 
@@ -167,9 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── HERO PARALLAX ────────────────────────────
   const heroContent = document.querySelector('.hero__content');
-  const heroPhoto = document.querySelector('.hero__photo');
 
-  if ((heroContent || heroPhoto) && !prefersReducedMotion) {
+  if (heroContent && !prefersReducedMotion) {
     window.addEventListener(
       'scroll',
       () => {
@@ -177,15 +209,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroHeight = document.querySelector('.hero')?.offsetHeight || 0;
 
         if (scrolled < heroHeight) {
-          if (heroContent) {
-            const translateY = scrolled * 0.25;
-            const opacity = 1 - (scrolled / heroHeight) * 1.15;
-            heroContent.style.transform = `translateY(${translateY}px)`;
-            heroContent.style.opacity = String(Math.max(0, opacity));
-          }
-          if (heroPhoto) {
-            heroPhoto.style.transform = `scale(1.05) translateY(${scrolled * 0.12}px)`;
-          }
+          const translateY = scrolled * 0.25;
+          const opacity = 1 - (scrolled / heroHeight) * 1.15;
+          heroContent.style.transform = `translateY(${translateY}px)`;
+          heroContent.style.opacity = String(Math.max(0, opacity));
         }
       },
       { passive: true }

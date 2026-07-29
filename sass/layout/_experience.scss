@@ -64,6 +64,21 @@
   margin: 8px 0 10px;
 }
 
+.timeline__role a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(201, 169, 110, 0.45);
+  text-underline-offset: 3px;
+  transition:
+    color var(--transition-fast),
+    text-decoration-color var(--transition-fast);
+}
+
+.timeline__role a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
 .timeline__description {
   color: var(--color-text-secondary);
   font-size: 15px;

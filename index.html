@@ -135,26 +135,16 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero" id="hero">
-      <div class="hero__media" aria-hidden="true">
-        <img
-          class="hero__photo"
-          src="./public/img/desktop.webp"
-          alt=""
-          width="433"
-          height="577"
-          decoding="async"
-          fetchpriority="high"
-        />
-        <div class="hero__veil"></div>
-        <div class="hero__grain"></div>
-      </div>
+      <div class="hero__media" id="heroVanta" aria-hidden="true"></div>
+      <div class="hero__veil" aria-hidden="true"></div>
+      <div class="hero__grain" aria-hidden="true"></div>
 
       <div class="hero__content">
         <p class="hero__brand hero-enter">LRM DEV</p>
         <h1 class="hero__name hero-enter hero-enter-delay-1">LUIS REQUENA<br />MELLADO</h1>
         <p class="hero__subtitle hero-enter hero-enter-delay-2">Full Stack Developer</p>
         <p class="hero__tagline hero-enter hero-enter-delay-3">
-          Creando experiencias digitales con pasión y código
+          Amante de la IA y de integrarla en cada software que construyo
         </p>
         <div class="hero__ctas hero-enter hero-enter-delay-4">
           <a href="#projects" class="btn btn-outline">VER PROYECTOS</a>
@@ -179,7 +169,7 @@
                 src="./public/img/desktop.webp"
                 alt="Luis Requena Mellado"
                 width="433"
-                height="577"
+                height="429"
                 decoding="async"
                 loading="lazy"
               />
@@ -192,20 +182,26 @@
               <p class="about__bio reveal reveal-delay-2">
                 Programo desde 2022: empecé formándome en mi tiempo libre y hoy tengo productos
                 reales en producción. Web, desktop y mobile — sin stack preferido: me gusta
-                construir donde haga falta.
+                construir donde haga falta. Soy un amante de la IA y de integrarla en todos los
+                software que desarrollo.
               </p>
               <p class="about__bio reveal reveal-delay-2">
                 Formación Full Stack en
                 <a href="https://www.conquerx.com/" target="_blank" rel="noopener">ConquerX</a>, más
-                C# y .NET por Udemy y YouTube. Gestioné la empresa familiar y un box de CrossFit
-                durante 3 años.
+                C# y .NET por Udemy y YouTube. Hoy trabajo en
+                <a href="https://rockinmedia.es/rockintech/" target="_blank" rel="noopener"
+                  >RockinTech</a
+                >
+                creando webs e integraciones con JavaScript, Node y React. Antes gestioné la empresa
+                familiar y un box de CrossFit durante 3 años.
               </p>
               <p class="about__bio about__bio--highlight reveal reveal-delay-3">
-                Busco un rol junior donde aportar desde el primer día: software real en producción,
-                ganas de aprender y compromiso de verdad.
+                Combino producto real en producción con una obsesión sana por la IA: cada proyecto
+                es una oportunidad de integrar agentes, automatizaciones y mejores flujos de
+                trabajo.
               </p>
               <a
-                href="./public/cv/curriculum.pdf"
+                href="./public/cv/curriculum_julio_26.pdf"
                 class="btn btn-outline btn-arrow reveal reveal-delay-4"
                 download
                 >DESCARGAR CV</a
@@ -222,6 +218,19 @@
           <div class="experience__grid">
             <div class="timeline">
               <article class="timeline__item reveal reveal-delay-1">
+                <span class="timeline__period">Actualidad</span>
+                <h3 class="timeline__role">
+                  Full Stack Developer ·
+                  <a href="https://rockinmedia.es/rockintech/" target="_blank" rel="noopener"
+                    >RockinTech</a
+                  >
+                </h3>
+                <p class="timeline__description">
+                  Creación de webs e integraciones con JavaScript, Node.js y React. Desarrollo de
+                  producto digital y automatizaciones para clientes de Rockin Media.
+                </p>
+              </article>
+              <article class="timeline__item reveal reveal-delay-2">
                 <span class="timeline__period">2022 — Actualidad</span>
                 <h3 class="timeline__role">Full Stack Developer · Proyectos propios y freelance</h3>
                 <p class="timeline__description">
@@ -230,7 +239,7 @@
                   Níjar.
                 </p>
               </article>
-              <article class="timeline__item reveal reveal-delay-2">
+              <article class="timeline__item reveal reveal-delay-3">
                 <span class="timeline__period">3 años</span>
                 <h3 class="timeline__role">Gerente · Vanguard CrossFit</h3>
                 <p class="timeline__description">
@@ -238,7 +247,7 @@
                   reales nacieron las apps Vanguard (cliente, negocio y web).
                 </p>
               </article>
-              <article class="timeline__item reveal reveal-delay-3">
+              <article class="timeline__item reveal reveal-delay-4">
                 <span class="timeline__period">Anteriormente</span>
                 <h3 class="timeline__role">Gestión · Empresa familiar</h3>
                 <p class="timeline__description">
@@ -385,16 +394,6 @@
                     loading="lazy"
                   /><span>React</span>
                 </li>
-                <li class="skill-chip">
-                  <img
-                    src="./public/img/sass.webp"
-                    alt=""
-                    width="512"
-                    height="512"
-                    decoding="async"
-                    loading="lazy"
-                  /><span>SASS</span>
-                </li>
               </ul>
             </div>
 
@@ -438,36 +437,47 @@
               <h3 class="skill-row__label">Herramientas</h3>
               <ul class="skill-row__list">
                 <li class="skill-chip">
-                  <img src="./public/img/Vite.js.svg" alt="" /><span>Vite</span>
-                </li>
-                <li class="skill-chip">
                   <img
-                    src="./public/img/netMaui.webp"
+                    src="./public/img/visualstudio.svg"
                     alt=""
-                    width="563"
-                    height="523"
+                    width="24"
+                    height="24"
                     decoding="async"
                     loading="lazy"
-                  /><span>.NET MAUI</span>
-                </li>
-                <li class="skill-chip">
-                  <img src="./public/img/pandas.svg" alt="" /><span>Pandas</span>
-                </li>
-                <li class="skill-chip">
-                  <img src="./public/img/numpy.svg" alt="" /><span>NumPy</span>
+                  /><span>Visual Studio</span>
                 </li>
                 <li class="skill-chip">
                   <img
-                    src="./public/img/linux.webp"
+                    src="./public/img/vscode.svg"
+                    alt=""
+                    width="24"
+                    height="24"
+                    decoding="async"
+                    loading="lazy"
+                  /><span>VS Code</span>
+                </li>
+                <li class="skill-chip">
+                  <img
+                    src="./public/img/github.webp"
                     alt=""
                     width="64"
                     height="64"
                     decoding="async"
                     loading="lazy"
-                  /><span>Linux</span>
+                  /><span>GitHub</span>
                 </li>
-                <li class="skill-chip">
-                  <img src="./public/img/git.svg" alt="" /><span>Git</span>
+                <li
+                  class="skill-chip skill-chip--ai"
+                  aria-label="IDEs y herramientas basadas en IA"
+                >
+                  <span class="skill-ai" aria-hidden="true">
+                    <img src="./public/img/openai.svg" alt="" width="18" height="18" />
+                    <img src="./public/img/anthropic.svg" alt="" width="18" height="18" />
+                  </span>
+                  <span>
+                    <span class="skill-ai__title">IA · IDEs &amp; Agents</span>
+                    <span class="skill-ai__meta">Cursor · Copilot · ChatGPT · Claude</span>
+                  </span>
                 </li>
               </ul>
             </div>
@@ -1193,7 +1203,7 @@
           </a>
         </div>
         <div class="contact__ctas reveal reveal-delay-4">
-          <a href="./public/cv/curriculum.pdf" class="btn btn-outline btn-arrow" download
+          <a href="./public/cv/curriculum_julio_26.pdf" class="btn btn-outline btn-arrow" download
             >DESCARGAR CV</a
           >
           <a href="mailto:luisrequenadev@outlook.com" class="btn btn-filled">ENVIAR EMAIL</a>
